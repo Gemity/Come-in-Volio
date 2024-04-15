@@ -9,7 +9,7 @@ public class CharacterObject : MonoBehaviour
     private static readonly float _moveYTarget = -4f;
 
     protected CharacterData _characterData;
-    protected GroupSetting _groupSetting;
+    protected CharacterGroupSetting _groupSetting;
 
     private float _lifeTime;
     protected int _health;
@@ -23,13 +23,11 @@ public class CharacterObject : MonoBehaviour
     public void Setup(CharacterData characterData, int group)
     {
         _characterData = characterData;
-        _groupSetting = GroupSettingSO.Instance.GetGroupById(group);
+        _groupSetting = CharacterGroupSettingSO.Instance.GetCharacterGroupById(group);
 
         _lifeTime = 0;
         _health = _groupSetting.health;
 
-        _speedX = UnityEngine.Random.Range(_groupSetting.speedX.x, _groupSetting.speedX.y);
-        _speedY = UnityEngine.Random.Range(_groupSetting.speedY.x, _groupSetting.speedY.y);
     }
 
     private void Update()
@@ -67,6 +65,11 @@ public class CharacterObject : MonoBehaviour
     protected virtual void ReachTarget()
     {
         onReachTarget?.Invoke(this);
+    }
+
+    public virtual void PlayAppearFx()
+    {
+
     }
 
     private void MoveForward()

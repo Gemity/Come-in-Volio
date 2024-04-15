@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPosY: 15
+  _distanceEachRay: 3
 --- !u!1 &407137575
 GameObject:
   m_ObjectHideFlags: 0
