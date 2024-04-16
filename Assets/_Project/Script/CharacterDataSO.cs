@@ -11,7 +11,6 @@ public struct CharacterData
     public string name;
     public int id;
     public Sprite faceSprite;
-    public Sprite bodySprite;
 }
 
 [CreateAssetMenu(fileName = "CharacterInGame", menuName = "Gameplay/CharacterInGame")]
@@ -35,5 +34,18 @@ public class CharacterDataSO : SingletonScriptableObject<CharacterDataSO>
         if (!_charactersData.ContainsKey(groupId))
             return null;
         return _charactersData[groupId];
+    }
+
+    public List<CharacterData> GetCharactersDataByGroupId(int groupId, int size)
+    {
+        if (!_charactersData.ContainsKey(groupId))
+            return null;
+
+        List<CharacterData> temp = new List<CharacterData>(_charactersData[groupId]);
+        temp.Shuffle();
+        if (size <= temp.Count)
+            return temp.GetRange(0, size);
+        else
+            return null;
     }
 }

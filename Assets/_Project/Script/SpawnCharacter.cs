@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Lean.Pool;
-using System;
 using Random = UnityEngine.Random;
 using System.Linq;
 
@@ -20,7 +19,7 @@ public class SpawnCharacter : MonoBehaviour
 
     public void Setup(StageData stageData)
     {
-        Random.InitState(DateTime.Now.GetHashCode());
+        Random.InitState(Time.time.GetHashCode());
         _stageData = stageData;
         _prefabs = new Dictionary<string, CharacterObject>();
 
@@ -38,12 +37,11 @@ public class SpawnCharacter : MonoBehaviour
             {
                 if (keys[i] < _timer)
                 {
-                    SpawnSetting setting = _stageData.SpawnGroupSetting[keys[i]];
+                    CharacterOnTimeline setting = _stageData.SpawnGroupSetting[keys[i]];
                     CharacterGroupSetting characterGroup = CharacterGroupSettingSO.Instance.GetCharacterGroupById(setting.characterGroupId);
                     SpawnGroupSetting spawnGroup = SpawnGroupSettingSO.Instance.GetSpawnSettingById(setting.spawnGroupId);
 
-                    CharacterObject prefab = GetCharacterPrefab(characterGroup.prefabPath);
-                    CharacterObject obj = LeanPool.Spawn<CharacterObject>(prefab);
+                    CharacterObject obj = LeanPool.Spawn<CharacterObject>(characterGroup.prefabPath);
 
                     if(spawnGroup.rayId > 0)
                     {
@@ -69,17 +67,6 @@ public class SpawnCharacter : MonoBehaviour
             yield return null;
             _timer += Time.deltaTime;
         }
-    }
-
-    private CharacterObject GetCharacterPrefab(string path)
-    {
-        if (!_prefabs.ContainsKey(path))
-        {
-            var obj = Resources.Load<CharacterObject>(path);
-            _prefabs.Add(path, obj);
-        }
-
-        return _prefabs[path];
     }
 
     private void Release()

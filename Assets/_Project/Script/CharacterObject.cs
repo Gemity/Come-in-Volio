@@ -20,10 +20,10 @@ public class CharacterObject : MonoBehaviour
     public Action<CharacterObject> onGotHitBullets;
     public Action<CharacterObject> onDie;
 
-    public void Setup(CharacterData characterData, int group)
+    public void Setup(CharacterData characterData, CharacterGroupSetting characterGroup)
     {
         _characterData = characterData;
-        _groupSetting = CharacterGroupSettingSO.Instance.GetCharacterGroupById(group);
+        _groupSetting = characterGroup;
 
         _lifeTime = 0;
         _health = _groupSetting.health;

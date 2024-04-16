@@ -25,4 +25,10 @@ public static class Utilities
         int index = UnityEngine.Random.Range(0, collection.Count);
         return collection.ToList().ElementAt(index);
     }
+
+    public static List<T> Shuffle<T>(this List<T> list)
+    {
+        System.Random rng = new System.Random(Time.time.GetHashCode());
+        return list.OrderBy(x => rng.Next()).ToList();
+    }
 }

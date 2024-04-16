@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEngine;
 
 [Serializable]
-public struct SpawnSetting
+public struct CharacterOnTimeline
 {
     public int spawnGroupId;
     public int characterGroupId;
@@ -15,13 +15,13 @@ public struct SpawnSetting
 [CreateAssetMenu(fileName = "StageData", menuName = "Gameplay/Stage Data")]
 public class StageData : ScriptableObject
 {
-    [SerializedDictionary(keyName:"Timeline", valueName:"SpawnSetting")][SerializeField] private SerializedDictionary<float, SpawnSetting> _spawnGroupSetting;
+    [SerializedDictionary(keyName:"Timeline", valueName:"SpawnSetting")][SerializeField] private SerializedDictionary<float, CharacterOnTimeline> _spawnGroupSetting;
 
-    public SerializedDictionary<float, SpawnSetting> SpawnGroupSetting => _spawnGroupSetting;
+    public SerializedDictionary<float, CharacterOnTimeline> SpawnGroupSetting => _spawnGroupSetting;
 
-    public Dictionary<float, SpawnSetting> GetSpawnSettingCopy()
+    public Dictionary<float, CharacterOnTimeline> GetSpawnSettingCopy()
     {
-        Dictionary<float,SpawnSetting> clone = new Dictionary<float,SpawnSetting>();
+        Dictionary<float,CharacterOnTimeline> clone = new Dictionary<float,CharacterOnTimeline>();
         foreach(var kvp in _spawnGroupSetting)
         {
             clone.Add(kvp.Key, kvp.Value);
