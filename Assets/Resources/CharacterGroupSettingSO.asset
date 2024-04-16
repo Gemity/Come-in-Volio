@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: CharacterGroupSettingSO
   m_EditorClassIdentifier: 
   _characterGroupSetting:
-  - name: Single
+  - name: Volior_S1
     groupId: 1
-    health: 1
-    score: 1
+    health: 3
+    score: 3
     speedX: 0
     speedY: 2
-    prefab: {fileID: 5512579313954197459, guid: cb436b3fae6ebe944bc806eac39941a2, type: 3}
-  - name: Jacat
+    prefab: {fileID: 2241408591906817572, guid: cb436b3fae6ebe944bc806eac39941a2, type: 3}
+  - name: Leader_S1
     groupId: 2
-    health: 5
+    health: 4
     score: 5
-    speedX: 3
+    speedX: 4
     speedY: 3
-    prefab: {fileID: 5512579313954197459, guid: 88c32b8a2e9d1fb46a141b0ac2fb876e, type: 3}
+    prefab: {fileID: 7633982275114049825, guid: 88c32b8a2e9d1fb46a141b0ac2fb876e, type: 3}

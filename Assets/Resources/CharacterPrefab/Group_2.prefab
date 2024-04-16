@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4313624670558884924}
-  - component: {fileID: 5512579313954197459}
+  - component: {fileID: 7633982275114049825}
   - component: {fileID: 1112404244371099618}
   - component: {fileID: 8090101789716602874}
   m_Layer: 6
@@ -28,13 +28,13 @@ Transform:
   m_GameObject: {fileID: 912256712627489549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5512579313954197459
+--- !u!114 &7633982275114049825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,11 +43,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 912256712627489549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb3b049aa133cef4f8bc8cfe773bc6c6, type: 3}
+  m_Script: {fileID: 11500000, guid: a08fbd8090a3c374bb6df816b6649f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 1112404244371099618}
   _boxCollider: {fileID: 8090101789716602874}
+  _hitEffectSprite:
+  - {fileID: 1112404244371099618}
 --- !u!212 &1112404244371099618
 SpriteRenderer:
   m_ObjectHideFlags: 0

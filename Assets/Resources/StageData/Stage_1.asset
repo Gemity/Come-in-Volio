@@ -14,19 +14,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnGroupSetting:
     _serializedList:
-    - Key: 1
+    - Key: 4
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 1
+    - Key: 7
       Value:
         spawnGroupId: 1
         characterGroupId: 1
-    - Key: 2
-      Value:
-        spawnGroupId: 2
-        characterGroupId: 2
-    - Key: 3
+    - Key: 8
       Value:
         spawnGroupId: 3
         characterGroupId: 1
-    - Key: 4
+    - Key: 11
       Value:
-        spawnGroupId: 4
+        spawnGroupId: 2
+        characterGroupId: 1
+    - Key: 17
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 1
+    - Key: 20
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 1
+    - Key: 24
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 1
+    - Key: 27
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 1
+    - Key: 30
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 1
+    - Key: 30.01
+      Value:
+        spawnGroupId: 3
         characterGroupId: 1
