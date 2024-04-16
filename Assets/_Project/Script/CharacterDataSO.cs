@@ -10,10 +10,10 @@ public struct CharacterData
 {
     public string name;
     public int id;
-    public Sprite faceSprite;
+    public Sprite sprite;
 }
 
-[CreateAssetMenu(fileName = "CharacterInGame", menuName = "Gameplay/CharacterInGame")]
+[CreateAssetMenu(fileName = "CharacterDataSO", menuName = "Gameplay/CharacterDataSO")]
 public class CharacterDataSO : SingletonScriptableObject<CharacterDataSO>
 {
     [SerializedDictionary(keyName:"Group id", valueName: "Data")][SerializeField]
@@ -46,6 +46,13 @@ public class CharacterDataSO : SingletonScriptableObject<CharacterDataSO>
         if (size <= temp.Count)
             return temp.GetRange(0, size);
         else
-            return null;
+        {
+            int x = size / temp.Count;
+            int mob = size % temp.Count;
+            var result = temp.SelectMany(character => Enumerable.Repeat(character, x)).ToList();
+            result.AddRange(temp.GetRange(0, mob));
+
+            return result;
+        }
     }
 }

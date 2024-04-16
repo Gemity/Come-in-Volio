@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb17a0fe37d0b5e41aaca65492ca0959, type: 3}
-  m_Name: CharacterInGame
+  m_Name: CharacterDataSO
   m_EditorClassIdentifier: 
   _charactersData:
     _serializedList:
     - Key: 1
       Value:
-      - name: Quynv
+      - name: DuyTA
         id: 1
-        faceSprite: {fileID: 0}
-        bodySprite: {fileID: 0}
-      - name: AnhPN
-        id: 1
-        faceSprite: {fileID: 0}
-        bodySprite: {fileID: 0}
+        sprite: {fileID: 21300000, guid: 29c69acb72f1cf54cbb3dd58cc8b6a86, type: 3}
+      - name: TrongNLH
+        id: 2
+        sprite: {fileID: 21300000, guid: d3144e6f2063b424dbf3e8ec6068f848, type: 3}
+      - name: KhanhABC
+        id: 3
+        sprite: {fileID: 21300000, guid: 59f9e82b4c6fd8048ada7af91c7fed6a, type: 3}
     - Key: 2
       Value:
-      - name: Minh Anh
+      - name: TriABC
         id: 10
-        faceSprite: {fileID: 0}
-        bodySprite: {fileID: 0}
+        sprite: {fileID: 21300000, guid: 5bd7d01d4093f1943a471e08bc18d43d, type: 3}

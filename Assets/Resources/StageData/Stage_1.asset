@@ -24,9 +24,9 @@ MonoBehaviour:
         characterGroupId: 2
     - Key: 3
       Value:
-        spawnGroupId: 1
+        spawnGroupId: 3
         characterGroupId: 1
     - Key: 4
       Value:
-        spawnGroupId: 1
+        spawnGroupId: 4
         characterGroupId: 1

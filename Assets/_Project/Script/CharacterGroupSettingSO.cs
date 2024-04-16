@@ -11,10 +11,10 @@ public struct CharacterGroupSetting
     public int health;
     public int score;
 
-    public float speed;
-    public bool canMoveHorizontal;
-    public Sprite bodySprite;
-    public CharacterObject prefabPath;
+    public float speedX;
+    public float speedY;
+
+    public CharacterObject prefab;
 }
 
 [CreateAssetMenu(fileName = "CharacterGroupSettingSO", menuName = "Gameplay/CharacterGroupSettingSO")]

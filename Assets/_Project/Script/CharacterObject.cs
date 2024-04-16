@@ -8,17 +8,24 @@ public class CharacterObject : MonoBehaviour
 {
     private static readonly float _moveYTarget = -4f;
 
+    [SerializeField] private SpriteRenderer _sprite;
+    [SerializeField] private BoxCollider2D _boxCollider;
+
     protected CharacterData _characterData;
     protected CharacterGroupSetting _groupSetting;
 
     private float _lifeTime;
     protected int _health;
-    private float _speedX, _speedY;
     protected bool _immune = false;
 
     public Action<CharacterObject> onReachTarget;
     public Action<CharacterObject> onGotHitBullets;
     public Action<CharacterObject> onDie;
+
+    private float _rootX;
+
+    public int Health => _health;
+    public int Score => _groupSetting.score;
 
     public void Setup(CharacterData characterData, CharacterGroupSetting characterGroup)
     {
@@ -27,7 +34,12 @@ public class CharacterObject : MonoBehaviour
 
         _lifeTime = 0;
         _health = _groupSetting.health;
+        _sprite.sprite = _characterData.sprite;
 
+        _boxCollider.offset = new Vector2(0, 0);
+        _boxCollider.size = new Vector2(_sprite.bounds.size.x / transform.lossyScale.x, _sprite.bounds.size.y / transform.lossyScale.y);
+
+        _rootX = transform.position.x;
     }
 
     private void Update()
@@ -74,9 +86,13 @@ public class CharacterObject : MonoBehaviour
 
     private void MoveForward()
     {
-        float dirX = Mathf.Sin(_lifeTime) > 0 ? 1 : -1;
-        float x = transform.position.x + dirX * _speedX * Time.deltaTime;
-        float y = transform.position.y -  _speedY * Time.deltaTime;
+        float x = _rootX;
+        if (_groupSetting.speedX > 0)
+        {
+            x += Const.Distance_Each_Ray * Mathf.Sin(_lifeTime * _groupSetting.speedX);
+        }
+
+        float y = transform.position.y - _groupSetting.speedY * Time.deltaTime;
         transform.position = new Vector3(x, y, 0);
 
         _lifeTime += Time.deltaTime;
