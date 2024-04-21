@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 0d6b6a6659a55b341a8c2a4d8053b0a5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Super Squad
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ed1667be8bd3ac441a4a06d060e31e67, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
