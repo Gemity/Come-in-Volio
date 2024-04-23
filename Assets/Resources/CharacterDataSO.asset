@@ -46,8 +46,3 @@ MonoBehaviour:
       - name: TrangTT
         id: 10
         sprite: {fileID: 21300000, guid: 63e9716f9eae8ed4aa4972f72c28551b, type: 3}
-    - Key: 2
-      Value:
-      - name: TriPM
-        id: 11
-        sprite: {fileID: 21300000, guid: 03d9e8dc1df8a0b4c9cdc9ffc154aa51, type: 3}

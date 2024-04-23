@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82f97744536c0874c9b8af5c9fe47b8a
+guid: f7ef10513a5b82340a862711bd3c4ebc
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Cambria
+  - BadaBoom BB
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

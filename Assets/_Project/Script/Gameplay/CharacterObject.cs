@@ -8,9 +8,6 @@ public class CharacterObject : MonoBehaviour
 {
     private static readonly float _moveYTarget = -4f;
 
-    [SerializeField] private SpriteRenderer _sprite;
-    [SerializeField] private BoxCollider2D _boxCollider;
-
     protected CharacterData _characterData;
     protected CharacterGroupSetting _groupSetting;
 
@@ -27,18 +24,14 @@ public class CharacterObject : MonoBehaviour
     public int Health => _health;
     public int Score => _groupSetting.score;
 
-    public void Setup(CharacterData characterData, CharacterGroupSetting characterGroup)
+    public virtual void Setup(CharacterData characterData, CharacterGroupSetting characterGroup)
     {
         _characterData = characterData;
         _groupSetting = characterGroup;
 
         _lifeTime = 0;
         _health = _groupSetting.health;
-        _sprite.sprite = _characterData.sprite;
-
-        _boxCollider.offset = new Vector2(0, 0);
-        _boxCollider.size = new Vector2(_sprite.bounds.size.x / transform.lossyScale.x, _sprite.bounds.size.y / transform.lossyScale.y);
-
+        _immune = false;
         _rootX = transform.position.x;
     }
 
@@ -63,10 +56,7 @@ public class CharacterObject : MonoBehaviour
 
     protected virtual void GotHitByBullet()
     {
-        onGotHitBullets?.Invoke(this);
-        _health--;
-        if(_health == 0)
-            OnDie();
+
     }
 
     protected virtual void OnDie()
