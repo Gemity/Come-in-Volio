@@ -11,4 +11,9 @@ public class MapController : Controller
     {
         return MAP_SCENE_NAME;
     }
+
+    public void EnterStage()
+    {
+        Manager.Load(GameplayController.GAMEPLAY_SCENE_NAME);
+    }
 }

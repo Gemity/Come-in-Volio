@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Lean.Pool;
 using System;
 using System.Collections;
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _firePoint;
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private float _coolDownFire = 0.5f;
+    [SerializeField] private Transform _camera;
 
     private float _timerCooldown;
     private bool _enableFire = false;
@@ -33,6 +35,7 @@ public class Player : MonoBehaviour
                 Bullet bullet = LeanPool.Spawn<Bullet>(_bulletPrefab, _firePoint.position, Quaternion.identity);
                 bullet.SetDirection(dir);
                 _timerCooldown = 0f;
+                _camera.DOShakePosition(0.2f, 6);
             }
         }
     }
