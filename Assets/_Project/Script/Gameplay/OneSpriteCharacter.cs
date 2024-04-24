@@ -8,6 +8,7 @@ public class OneSpriteCharacter : CharacterObject
 {
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private TMP_Text _textDispalay;
+    [SerializeField] private GameObject _explosionPrefab;
 
     private int _isDamagedProperty;
     private void Awake()
@@ -21,7 +22,9 @@ public class OneSpriteCharacter : CharacterObject
 
         if (characterData.sprite != null)
             _sprite.sprite = characterData.sprite;
-        _textDispalay.text = characterData.name;
+
+        if (_textDispalay != null && !string.IsNullOrEmpty(characterData.name))
+            _textDispalay.text = characterData.name;
     }
 
     protected override void GotHitByBullet()
@@ -46,6 +49,9 @@ public class OneSpriteCharacter : CharacterObject
     protected override void OnDie()
     {
         base.OnDie();
+        if (_explosionPrefab != null)
+            LeanPool.Spawn(_explosionPrefab, transform.position, Quaternion.identity);
+
         LeanPool.Despawn(this);
     }
 

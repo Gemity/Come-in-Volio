@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Canvas: {fileID: 932985009}
   m_Camera: {fileID: 0}
-  FullScreen: 1
+  FullScreen: 0
   Animation: {fileID: 1997761294}
   _canvas: {fileID: 1068225447}
   _scoreText: {fileID: 506647542}

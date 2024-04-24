@@ -12,10 +12,15 @@ public class Player : MonoBehaviour
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private float _coolDownFire = 0.5f;
     [SerializeField] private Transform _camera;
+    [SerializeField] private Animation _muzzle;
+    [SerializeField] private SpriteRenderer _hintDir;
+    [SerializeField] private Transform _target;
+    [SerializeField] private GameObject _bulletFalling;
 
     private float _timerCooldown;
     private bool _enableFire = false;
     public bool EnableFire { get => _enableFire; set => _enableFire = value; }
+    private readonly Vector3 _bulletFallingPos = new Vector3(0.11f, -7.09f, 0);
 
     public void Init()
     {
@@ -36,6 +41,10 @@ public class Player : MonoBehaviour
                 bullet.SetDirection(dir);
                 _timerCooldown = 0f;
                 _camera.DOShakePosition(0.2f, 6);
+                _muzzle.Play();
+                _hintDir.DOFade(0, 0.2f).OnComplete(() => _hintDir.color = Vector4.one);
+                _target.transform.position = vector;
+                LeanPool.Spawn(_bulletFalling);
             }
         }
     }

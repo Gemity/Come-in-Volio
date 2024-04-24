@@ -23,7 +23,7 @@ public static class User
 
     private static UserData data;
     public static int StageId { get { return data.stageId; } set { data.stageId = value; } }
-    public static bool Sound { get { return data.sound;} }
+    public static bool Sound { get { return data.sound; } set { data.sound = value; } }
     private static void Load()
     {
         string json = PlayerPrefs.GetString(KeySave, string.Empty);

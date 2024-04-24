@@ -66,6 +66,7 @@ public class SpawnCharacter : MonoBehaviour
                         Vector3 pos = new Vector3(x, y, 0);
                         obj.transform.position = pos;
                         obj.PlayAppearFx();
+                        obj.onDie += GameplayController.Instance.UpdateScore;
                     }
 
                     obj.name = data.name;

@@ -15,9 +15,12 @@ public struct CharacterOnTimeline
 [CreateAssetMenu(fileName = "StageData", menuName = "Gameplay/Stage Data")]
 public class StageData : ScriptableObject
 {
+    [SerializeField] private int _scoreRequire;
+
     [SerializedDictionary(keyName:"Timeline", valueName:"SpawnSetting")][SerializeField] private SerializedDictionary<float, CharacterOnTimeline> _spawnGroupSetting;
 
     public SerializedDictionary<float, CharacterOnTimeline> SpawnGroupSetting => _spawnGroupSetting;
+    public int ScoreRequire => _scoreRequire;
 
     public Dictionary<float, CharacterOnTimeline> GetSpawnSettingCopy()
     {
