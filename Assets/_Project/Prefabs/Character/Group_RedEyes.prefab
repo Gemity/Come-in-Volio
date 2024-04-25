@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 2440159642414412038}
   - component: {fileID: 6640032540823020144}
   m_Layer: 6
-  m_Name: Group
+  m_Name: Group_RedEyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -501,7 +501,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2dd427e8e6a3b9b49b2451b634e0638b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61cc6ad72f220494680cec0a844e4079, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
