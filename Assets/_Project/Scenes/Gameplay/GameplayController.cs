@@ -20,6 +20,8 @@ public class GameplayController : Controller
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private ScorePopup _scorePopup;
 
+    [SerializeField] private int _debugStageId;
+
     private static GameplayController _instance;
     public static GameplayController Instance => _instance;
 
@@ -34,10 +36,12 @@ public class GameplayController : Controller
     public override void OnActive(object data)
     {
         int stageId = 1;
-        if(data != null)
+        if (_debugStageId > 0)
+            stageId = _debugStageId;
+        else if (data != null)
             stageId = (int)data;
 
-        _stageData = Resources.Load<StageData>($"StageData/Stage_{stageId}");
+        _stageData = Resources.Load<StageData>($"Stage_{stageId}");
     }
 
     private void Start()

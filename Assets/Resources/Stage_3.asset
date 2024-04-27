@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577a3c8d30e2ffb42bc5c78ecc18415e, type: 3}
+  m_Name: Stage_3
+  m_EditorClassIdentifier: 
+  _scoreRequire: 40
+  _spawnGroupSetting:
+    _serializedList:
+    - Key: 3
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 5
+    - Key: 6
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 5
+    - Key: 7
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 5
+    - Key: 8
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 4
+    - Key: 14
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 4
+    - Key: 16
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 13
+    - Key: 19
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 13
+    - Key: 19.01
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 13
+    - Key: 21
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 5
+    - Key: 21.0001
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 5
+    - Key: 21.00001
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 5
+    - Key: 26
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 5
+    - Key: 26.0001
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 5
+    - Key: 26.0002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 5
+    - Key: 31
+      Value:
+        spawnGroupId: -1
+        characterGroupId: 6
+    - Key: 33
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 4
+    - Key: 33.0001
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 5
+    - Key: 33.00002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 5
