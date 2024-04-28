@@ -12,6 +12,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577a3c8d30e2ffb42bc5c78ecc18415e, type: 3}
   m_Name: Stage_5
   m_EditorClassIdentifier: 
-  _scoreRequire: 0
+  _scoreRequire: 100
   _spawnGroupSetting:
-    _serializedList: []
+    _serializedList:
+    - Key: 3
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 17
+    - Key: 7
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 17
+    - Key: 12
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 12
+    - Key: 12.0001
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 12
+    - Key: 12.0002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 12
+    - Key: 14
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 12
+    - Key: 14.001
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 12
+    - Key: 14.002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 12
+    - Key: 15
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 13
+    - Key: 15.001
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 13
+    - Key: 15.002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 13
+    - Key: 17
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 13
+    - Key: 17.001
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 13
+    - Key: 17.002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 13
+    - Key: 19
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 10
+    - Key: 19.001
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 10
+    - Key: 19.002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 10
+    - Key: 21
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 10
+    - Key: 21.0001
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 10
+    - Key: 21.0002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 10
+    - Key: 30
+      Value:
+        spawnGroupId: 4
+        characterGroupId: 16
+    - Key: 31
+      Value:
+        spawnGroupId: 4
+        characterGroupId: 6
+    - Key: 40
+      Value:
+        spawnGroupId: 4
+        characterGroupId: 100
