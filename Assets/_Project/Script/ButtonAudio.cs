@@ -12,6 +12,7 @@ public class ButtonAudio : MonoBehaviour
 
     public void Play()
     {
+        return;
         if (AudioManager.Instance != null && User.Sound)
         {
             if (string.IsNullOrEmpty(_sfx))

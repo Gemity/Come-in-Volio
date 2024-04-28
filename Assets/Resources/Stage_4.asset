@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577a3c8d30e2ffb42bc5c78ecc18415e, type: 3}
   m_Name: Stage_4
   m_EditorClassIdentifier: 
-  _scoreRequire: 0
+  _scoreRequire: 10
   _spawnGroupSetting:
-    _serializedList: []
+    _serializedList:
+    - Key: 2
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 100

@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class CharacterObject : MonoBehaviour
 {
-    private static readonly float _moveYTarget = -4f;
+    [SerializeField] protected float _moveYTarget = -4f;
+    [SerializeField] private GameObject _appearEffPreafab;
 
     protected CharacterData _characterData;
     protected CharacterGroupSetting _groupSetting;
@@ -14,15 +15,18 @@ public class CharacterObject : MonoBehaviour
     private float _lifeTime;
     protected int _health;
     protected bool _immune = false;
+    protected bool _reachTarget = false;
 
     public Action<CharacterObject> onReachTarget;
     public Action<CharacterObject> onGotHitBullets;
     public Action<CharacterObject> onDie;
+    public Action<CharacterObject> onDestroy;
 
+    protected bool _initalize = false;
     private float _rootX;
-
-    public int Health => _health;
-    public int Score => _groupSetting.score;
+    public virtual int Health => _health;
+    public virtual int Score => _groupSetting.score;
+    public GameObject AppearEffPrefab => _appearEffPreafab;
 
     public virtual void Setup(CharacterData characterData, CharacterGroupSetting characterGroup)
     {
@@ -33,16 +37,22 @@ public class CharacterObject : MonoBehaviour
         _health = _groupSetting.health;
         _immune = false;
         _rootX = transform.position.x;
+        _initalize = true;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
+        if (!_initalize)
+            return;
         MoveForward();
     }
 
     protected virtual void LateUpdate()
     {
-        if(transform.position.y < _moveYTarget)
+        if (!_initalize)
+            return;
+
+        if (transform.position.y < _moveYTarget)
             ReachTarget();
     }
 
@@ -59,6 +69,11 @@ public class CharacterObject : MonoBehaviour
 
     }
 
+    public virtual void Stop()
+    {
+        _initalize = false;
+    }
+
     protected virtual void OnDie()
     {
         onDie?.Invoke(this);
@@ -66,6 +81,10 @@ public class CharacterObject : MonoBehaviour
 
     protected virtual void ReachTarget()
     {
+        if (_reachTarget)
+            return;
+
+        _reachTarget = true;
         onReachTarget?.Invoke(this);
     }
 
@@ -86,5 +105,10 @@ public class CharacterObject : MonoBehaviour
         transform.position = new Vector3(x, y, 0);
 
         _lifeTime += Time.deltaTime;
+    }
+
+    private void OnDestroy()
+    {
+        onDestroy?.Invoke(this);
     }
 }

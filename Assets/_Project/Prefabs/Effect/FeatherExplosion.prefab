@@ -14247,7 +14247,7 @@ GameObject:
   - component: {fileID: 19846592}
   - component: {fileID: 19986436}
   m_Layer: 0
-  m_Name: FeatherExplosion 1
+  m_Name: FeatherExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

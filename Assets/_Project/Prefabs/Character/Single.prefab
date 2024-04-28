@@ -268,6 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08fbd8090a3c374bb6df816b6649f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveYTarget: -4
+  _appearEffPreafab: {fileID: 0}
   _sprite: {fileID: 2584671528485944932}
   _textDispalay: {fileID: 7409977315192659887}
   _explosionPrefab: {fileID: 0}
@@ -488,7 +490,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &4801777513744844047
 MonoBehaviour:

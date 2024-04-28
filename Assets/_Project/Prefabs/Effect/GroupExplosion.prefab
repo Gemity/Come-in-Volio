@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8373624692941575486}
   - component: {fileID: 8573092693301046288}
   - component: {fileID: 8574036557872095490}
+  - component: {fileID: 2988045279530674697}
   m_Layer: 0
   m_Name: GroupExplosion
   m_TagString: Untagged
@@ -4865,6 +4866,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2988045279530674697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376194018769709912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e2146ca88a1a74a8183a3ccbff86b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delay: 1
+  _isDestroy: 1
 --- !u!1 &8376630935571641716
 GameObject:
   m_ObjectHideFlags: 0

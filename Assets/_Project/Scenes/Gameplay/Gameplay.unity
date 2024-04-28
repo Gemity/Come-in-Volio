@@ -179,7 +179,7 @@ MonoBehaviour:
   _soundOff: {fileID: 1084080547}
   _scoreText: {fileID: 355998710}
   _scorePopup: {fileID: 6979625075291762350, guid: f0c1b822d0ad4b945b233802065379cd, type: 3}
-  _debugStageId: 3
+  _debugStageId: 4
 --- !u!114 &1387963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3414a43a3bd5da647b8727bc6bd514c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPosY: 11
+  _spawnPosY: 13
 --- !u!1 &338709218
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +540,50 @@ Transform:
   m_Father: {fileID: 338709219}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &841989038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841989040}
+  - component: {fileID: 841989039}
+  m_Layer: 0
+  m_Name: InputControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &841989039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841989038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae3067992f7c6c47a4cbb7081020c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &841989040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841989038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &912696317
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +857,7 @@ GameObject:
   - component: {fileID: 944923380}
   - component: {fileID: 944923379}
   m_Layer: 0
-  m_Name: Canvas (1)
+  m_Name: BG Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,12 +13,15 @@ public class SpawnCharacter : MonoBehaviour
     private float _timer = 0;
     private StageData _stageData;
     private Coroutine _spawnRoutine;
+    private CharacterObject _lastCharacter;
+    private List<CharacterObject> _characterObjects;
 
-
+    private WaitForSeconds wait_0_5s = new WaitForSeconds(0.5f);
     public void Setup(StageData stageData)
     {
         Random.InitState(Time.time.GetHashCode());
         _stageData = stageData;
+        _characterObjects = new List<CharacterObject>();
         _spawnRoutine = StartCoroutine(Co_SpawnCharacter());
     }
 
@@ -50,28 +53,37 @@ public class SpawnCharacter : MonoBehaviour
 
                     SpawnGroupSetting spawnGroup = SpawnGroupSettingSO.Instance.GetSpawnSettingById(setting.spawnGroupId);
                     CharacterGroupSetting characterGroup = CharacterGroupSettingSO.Instance.GetCharacterGroupById(setting.characterGroupId);
-                    CharacterObject obj = LeanPool.Spawn<CharacterObject>(characterGroup.prefab);
+                   
 
+                    Vector3 pos;
                     if(spawnGroup.rayId > 0)
                     {
                         float x = (spawnGroup.rayId - 2) * Const.Distance_Each_Ray;
-                        Vector3 pos = new Vector3(x, _spawnPosY, 0);
-                        obj.transform.position = pos;
+                        pos = new Vector3(x, _spawnPosY, 0);
                     }
                     else
                     {
                         float x = Random.Range(spawnGroup.boundCenter.x - spawnGroup.boundSize.x, spawnGroup.boundCenter.x + spawnGroup.boundSize.x);
                         float y = Random.Range(spawnGroup.boundCenter.y - spawnGroup.boundSize.y, spawnGroup.boundCenter.y + spawnGroup.boundSize.y);
 
-                        Vector3 pos = new Vector3(x, y, 0);
-                        obj.transform.position = pos;
-                        obj.PlayAppearFx();
-                        obj.onDie += GameplayController.Instance.UpdateScore;
+                        pos = new Vector3(x, y, 0);
                     }
 
+                    if (characterGroup.prefab.AppearEffPrefab != null)
+                    {
+                        GameObject eff = Instantiate(characterGroup.prefab.AppearEffPrefab, pos, Quaternion.identity);
+                        yield return wait_0_5s;
+                    }
+
+                    CharacterObject obj = Instantiate<CharacterObject>(characterGroup.prefab);
+                    obj.transform.position = pos;
+                    obj.onDie += GameplayController.Instance.UpdateScore;
+                    obj.onDestroy += x => _characterObjects.Remove(obj);
                     obj.name = data.name;
                     obj.Setup(data, characterGroup);
+                    _characterObjects.Add(obj);
 
+                    _lastCharacter = obj;
                     timeline.RemoveAt(i);
                     i--;
                 }
@@ -80,10 +92,19 @@ public class SpawnCharacter : MonoBehaviour
             yield return null;
             _timer += Time.deltaTime;
         }
+
+        _lastCharacter.onDestroy += _ => GameplayController.Instance.CheckLoseGame();
     }
 
-    private void Release()
+    public void Stop()
     {
         StopCoroutine(_spawnRoutine);
+        foreach (var obj in _characterObjects)
+        {
+            if(obj != null)
+            {
+                obj.Stop();
+            }
+        }
     }
 }

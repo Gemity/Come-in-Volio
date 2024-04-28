@@ -7,4 +7,5 @@ public static class Const
 {
     public const string Bullet_Tag = "Bullet";
     public const float Distance_Each_Ray = 3;
+    public const int MaxStage = 5;
 }

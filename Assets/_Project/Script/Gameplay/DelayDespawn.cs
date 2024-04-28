@@ -6,6 +6,7 @@ using UnityEngine;
 public class DelayDespawn : MonoBehaviour
 {
     [SerializeField] private float _delay;
+    [SerializeField] private bool _isDestroy;
     private void OnEnable()
     {
         StartCoroutine(Co_DelayDespawn());
@@ -14,6 +15,9 @@ public class DelayDespawn : MonoBehaviour
     private IEnumerator Co_DelayDespawn()
     {
         yield return new WaitForSeconds(_delay);
-        LeanPool.Despawn(this);
+        if(_isDestroy )
+            Destroy(gameObject);
+        else
+            LeanPool.Despawn(this);
     }
 }

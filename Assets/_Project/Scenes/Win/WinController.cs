@@ -26,6 +26,6 @@ public class WinController : Controller
     private void Start()
     {
         _canvas.worldCamera = Manager.Object.UICamera;
-        DOTween.To(() => 0, value => _scoreText.text = value.ToString(), _score, 0.5f);
+        DOTween.To(() => 0, value => _scoreText.text = value.ToString(), _score, 1);
     }
 }

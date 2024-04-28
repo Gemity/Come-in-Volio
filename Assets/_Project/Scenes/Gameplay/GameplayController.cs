@@ -4,6 +4,7 @@ using UnityEngine;
 using SS.View;
 using TMPro;
 using Lean.Pool;
+using UnityEngine.TextCore.Text;
 
 public class GameplayController : Controller
 {
@@ -49,7 +50,7 @@ public class GameplayController : Controller
         _scoreText.text = $"{_score}/{_stageData.ScoreRequire}";
         _spawnCharacter.Setup(_stageData);
         _player.Init();
-        InputControl.Instance.EnableInput = true;
+        InputControl.Instance.EnableFinger = true;
     }
 
     public void ResignCallBack4Object(CharacterObject objetc)
@@ -76,8 +77,48 @@ public class GameplayController : Controller
             OnWin();
     }
 
+    public void UpdateScore(int score, Vector3 popupPos)
+    {
+        _score += score;
+        _scoreText.text = $"{_score}/{_stageData.ScoreRequire}";
+
+        var popupScore = LeanPool.Spawn<ScorePopup>(_scorePopup, popupPos, Quaternion.identity);
+        popupScore.Setup(score);
+
+        if (_score >= _stageData.ScoreRequire)
+            OnWin();
+    }
+
+    public void CheckLoseGame()
+    {
+        if(_score < _stageData.ScoreRequire)
+        {
+            OnLose();
+        }
+    }
+
+    private void OnLose()
+    {
+        InputControl.Instance.EnableFinger = false;
+        Manager.Add(LoseController.LOSE_SCENE_NAME);
+    }
+
     private void OnWin()
     {
+        InputControl.Instance.EnableFinger = false;
 
+        if (User.StageId < Const.MaxStage)
+        {
+            User.StageId++;
+            Manager.Add(WinController.WIN_SCENE_NAME, _score);
+        }
+        else
+            CompleteGame();
+    }
+
+    private void CompleteGame()
+    {
+        _spawnCharacter.Stop();
+        Manager.Add(CompleteGameController.COMPLETEGAME_SCENE_NAME);
     }
 }

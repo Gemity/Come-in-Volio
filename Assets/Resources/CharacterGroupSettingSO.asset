@@ -20,6 +20,7 @@ MonoBehaviour:
     speedX: 0
     speedY: 1.3
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    description: 
   - name: Volior_S2
     groupId: 3
     health: 3
@@ -27,6 +28,7 @@ MonoBehaviour:
     speedX: 0
     speedY: 1.3
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    description: 
   - name: Volior_S3
     groupId: 5
     health: 3
@@ -34,6 +36,7 @@ MonoBehaviour:
     speedX: 0
     speedY: 1.3
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    description: 
   - name: Volior_S4
     groupId: 8
     health: 3
@@ -41,6 +44,7 @@ MonoBehaviour:
     speedX: 0
     speedY: 1.3
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    description: 
   - name: Volior_S5
     groupId: 10
     health: 3
@@ -48,6 +52,7 @@ MonoBehaviour:
     speedX: 0
     speedY: 1.3
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    description: 
   - name: Leader_S2
     groupId: 2
     health: 5
@@ -55,6 +60,7 @@ MonoBehaviour:
     speedX: 0
     speedY: 1.8
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    description: 
   - name: Leader_S3
     groupId: 4
     health: 5
@@ -62,6 +68,7 @@ MonoBehaviour:
     speedX: 0
     speedY: 1.8
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    description: 
   - name: Leader_S4
     groupId: 7
     health: 5
@@ -69,20 +76,23 @@ MonoBehaviour:
     speedX: 0
     speedY: 1.8
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    description: 
   - name: Group_S3
     groupId: 6
     health: 4
     score: 10
     speedX: 0
     speedY: 1.6
-    prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    prefab: {fileID: 2440159642414412038, guid: 5d4a17ebfd9fc3a40b97d07cb467a506, type: 3}
+    description: Jacat group
   - name: Cryer
     groupId: 13
     health: 1
     score: -1
     speedX: 0
     speedY: 1.3
-    prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    prefab: {fileID: 440030185158331363, guid: f8088859787aa794ea452f3a7792bd96, type: 3}
+    description: 
   - name: Leader_S5
     groupId: 12
     health: 5
@@ -90,3 +100,12 @@ MonoBehaviour:
     speedX: 0
     speedY: 1.8
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+    description: 
+  - name: BossVuongLt
+    groupId: 100
+    health: 10
+    score: 9999
+    speedX: 0
+    speedY: 1
+    prefab: {fileID: 2357790803352936734, guid: 693eede5890fc0144af956a8835fcdee, type: 3}
+    description: 

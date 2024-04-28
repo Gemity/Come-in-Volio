@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class OneSpriteCharacter : CharacterObject
 {
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private TMP_Text _textDispalay;
     [SerializeField] private GameObject _explosionPrefab;
+    [SerializeField] private Animation _animation;
 
     private int _isDamagedProperty;
     private void Awake()
@@ -50,14 +52,23 @@ public class OneSpriteCharacter : CharacterObject
     {
         base.OnDie();
         if (_explosionPrefab != null)
-            LeanPool.Spawn(_explosionPrefab, transform.position, Quaternion.identity);
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
 
-        LeanPool.Despawn(this);
+        Destroy(gameObject);
     }
 
-    protected override void ReachTarget()
+    public override void Stop()
     {
-        base.ReachTarget();
-        LeanPool.Despawn(this);
+        base.Stop();
+        _animation.Stop();
+    }
+
+    protected override void LateUpdate()
+    {
+        if (!_initalize)
+            return;
+
+        if (transform.position.y < _moveYTarget)
+            LeanPool.Despawn(this);
     }
 }

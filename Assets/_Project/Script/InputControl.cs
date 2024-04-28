@@ -12,12 +12,12 @@ public class InputControl : MMSingleton<InputControl>
     }
 
     private InputType _inputType;
-    private bool _enableInput;
+    private bool _enableFinger;
     private Camera _camera;
 
     public Action<Vector3> onFingerDown;
 
-    public bool EnableInput { get => _enableInput; set => _enableInput = value; }
+    public bool EnableFinger { get => _enableFinger; set => _enableFinger = value; }
     public Camera Camera => _camera;
 
     private void Start()
@@ -30,7 +30,7 @@ public class InputControl : MMSingleton<InputControl>
 
     private void Update()
     {
-        if (!_enableInput) return;
+        if (!_enableFinger) return;
 
         if (_inputType == InputType.Touch && Input.touchCount > 0)
         {

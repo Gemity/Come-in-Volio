@@ -32,4 +32,4 @@ MonoBehaviour:
     id: 4
     rayId: -1
     boundCenter: {x: 0, y: 6}
-    boundSize: {x: 8, y: 8}
+    boundSize: {x: 8, y: 4}

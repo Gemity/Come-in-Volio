@@ -15,6 +15,7 @@ public struct CharacterGroupSetting
     public float speedY;
 
     public CharacterObject prefab;
+    [TextArea] public string description;
 }
 
 [CreateAssetMenu(fileName = "CharacterGroupSettingSO", menuName = "Gameplay/CharacterGroupSettingSO")]
