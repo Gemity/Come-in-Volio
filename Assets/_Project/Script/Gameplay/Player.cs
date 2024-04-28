@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _firePoint;
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private float _coolDownFire = 0.5f;
-    [SerializeField] private Transform _camera;
+    [SerializeField] private Transform[] _shakeBg;
     [SerializeField] private Animation _muzzle;
     [SerializeField] private SpriteRenderer _hintDir;
     [SerializeField] private Transform _target;
@@ -40,7 +40,11 @@ public class Player : MonoBehaviour
                 Bullet bullet = LeanPool.Spawn<Bullet>(_bulletPrefab, _firePoint.position, Quaternion.identity);
                 bullet.SetDirection(dir);
                 _timerCooldown = 0f;
-                _camera.DOShakePosition(0.2f, 6);
+                foreach(var i in _shakeBg)
+                {
+                    i.DOShakePosition(0.2f, 6);
+                }
+               
                 _muzzle.Play();
                 _hintDir.DOFade(0, 0.2f).OnComplete(() => _hintDir.color = Vector4.one);
                 _target.transform.position = vector;

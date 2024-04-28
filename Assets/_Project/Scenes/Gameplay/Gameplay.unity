@@ -928,7 +928,9 @@ MonoBehaviour:
   _firePoint: {fileID: 816470829}
   _bulletPrefab: {fileID: 4144055648707184591, guid: 725a45552e75b984fab814fdd65565b1, type: 3}
   _coolDownFire: 0.45
-  _camera: {fileID: 1324922190}
+  _shakeBg:
+  - {fileID: 1324922190}
+  - {fileID: 1181756029}
   _muzzle: {fileID: 1494546836}
   _hintDir: {fileID: 1535275766}
   _target: {fileID: 2063393505}
