@@ -61,3 +61,9 @@ MonoBehaviour:
     boundCenter: {x: 0, y: 6}
     boundSize: {x: 8, y: 4}
     absolutePosition: {x: -2.5, y: 4}
+  - name: Center_Middle
+    id: 9
+    rayId: -1
+    boundCenter: {x: 0, y: 6}
+    boundSize: {x: 8, y: 4}
+    absolutePosition: {x: 0, y: 4}

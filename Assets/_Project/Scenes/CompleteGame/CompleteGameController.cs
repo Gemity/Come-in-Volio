@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SS.View;
 using DG.Tweening;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class CompleteGameController : Controller
 {
@@ -20,6 +20,7 @@ public class CompleteGameController : Controller
     [SerializeField] private RectTransform _get1Bil, _get5mPerMonth;
     [SerializeField] private RectTransform _reciveReward;
     [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private Image _chungNhan;
 
     private int _countClick1Bil = 0;
     private IEnumerator Start()
@@ -40,8 +41,10 @@ public class CompleteGameController : Controller
     {
         if (User.Sound)
             AudioManager.Instance.PlaySfx("Pop-up fade");
+        _lightEff.SetActive(false);
         yield return _canvasGroup.DOFade(0,0.4f).WaitForCompletion();
         yield return _reciveReward.DOAnchorPosY(0, 0.4f).SetEase(Ease.OutBack);
+        _lightEff.SetActive(true);
         _get1Bil.DOScale(1, 0.3f).SetEase(Ease.OutBack).OnComplete(() =>
         {
             _get1Bil.DOScale(1.1f, 0.3f).From(1).SetLoops(-1, LoopType.Yoyo);
@@ -61,6 +64,13 @@ public class CompleteGameController : Controller
 
     public void Get5MPerMonth()
     {
-
+        Sequence sq = DOTween.Sequence();
+        _chungNhan.gameObject.SetActive(true);
+        sq.Append(_chungNhan.transform.DOScale(1, 25f / 60f).From(4))
+          .AppendInterval(0.5f)
+          .AppendCallback(() =>
+          {
+              Manager.Load(TakePhotoController.TAKEPHOTO_SCENE_NAME);
+          });
     }
 }

@@ -11,6 +11,11 @@ using System.Security.Claims;
 
 public class GameplayController : Controller
 {
+    private enum GameState
+    {
+        Notset = 0, Waiting = 1, Playing = 2, Win = 3, Lose = 4, Pause = 5
+    }
+
     public const string GAMEPLAY_SCENE_NAME = "Gameplay";
 
     public override string SceneName()
@@ -27,6 +32,8 @@ public class GameplayController : Controller
     [SerializeField] private RectTransform _tutorialPanel;
     [SerializeField] private Button _tutorialButton;
     [SerializeField] private AudioClip[] _soundsHitBullet;
+    [SerializeField] private Image _notiDanger;
+    [SerializeField] private TMP_Text _targetScore;
 
     [SerializeField] private int _debugStageId;
 
@@ -36,6 +43,8 @@ public class GameplayController : Controller
     private StageData _stageData;
     private int _score = 0;
     private Coroutine _playFxRoutine;
+    private GameState _state;
+    private bool _dangerBoss =false;
 
     private int _countGroup = 0;
     private void Awake()
@@ -59,6 +68,8 @@ public class GameplayController : Controller
 
     private void Start()
     {
+        _state = GameState.Waiting;
+
         _scoreText.text = $"{_score}/{_stageData.ScoreRequire}";
         if (!User.ShowTutorial)
         {
@@ -84,8 +95,31 @@ public class GameplayController : Controller
         }
     }
 
+    private void Update()
+    {
+        if(User.StageId == 5 && !_dangerBoss && Time.time > 35)
+        {
+            _dangerBoss = true;
+            ShowDanger();
+        }
+    }
+
+    private void ShowDanger()
+    {
+        if (User.Sound)
+            AudioManager.Instance.PlaySfx("danger", 1, false, true);
+        _notiDanger.gameObject.SetActive(true);
+        _notiDanger.DOFade(1, 1).From(0).SetLoops(8, LoopType.Yoyo).OnComplete(() =>
+        {
+            AudioManager.Instance.StopSfx();
+            _notiDanger.gameObject.SetActive(false);
+        });
+
+    }
+
     public void PlayGame()
     {
+        _state = GameState.Playing;
         _spawnCharacter.Setup(_stageData);
         _player.Init();
         InputControl.Instance.EnableFinger = true;
@@ -93,8 +127,29 @@ public class GameplayController : Controller
             AudioManager.Instance.PlayBgm("BGM");
 
         _playFxRoutine = StartCoroutine(Co_Playfx());
+        StartCoroutine(Co_DisplayTargetScore());
     }
     
+    private IEnumerator Co_DisplayTargetScore()
+    {
+        _targetScore.gameObject.SetActive(true);
+        _targetScore.text = $"Target score : {_stageData.ScoreRequire}";
+
+        yield return DOTween.To(() => 0f, value =>
+        {
+            _targetScore.color = new Color(1, 1, 1, value);
+        }, 1, 0.5f).WaitForCompletion();
+
+        yield return new WaitForSeconds(2);
+
+        yield return DOTween.To(() => 1f, value =>
+        {
+            _targetScore.color = new Color(1, 1, 1, value);
+        }, 0, 0.5f).WaitForCompletion();
+
+        _targetScore.gameObject.SetActive(false);
+    }
+
     private IEnumerator Co_Playfx()
     {
         while (true)
@@ -105,10 +160,6 @@ public class GameplayController : Controller
         }
     }
 
-    public void ResignCallBack4Object(CharacterObject objetc)
-    {
-
-    }
 
     public void ToggleSound()
     {
@@ -169,12 +220,19 @@ public class GameplayController : Controller
 
     private void OnLose()
     {
+        if (_state == GameState.Lose)
+            return;
+
+        _state = GameState.Lose;
         InputControl.Instance.EnableFinger = false;
         Manager.Add(LoseController.LOSE_SCENE_NAME);
     }
 
     private void OnWin()
     {
+        if(_state == GameState.Win) return;
+
+        _state = GameState.Win;
         InputControl.Instance.EnableFinger = false;
 
         if (User.StageId < Const.MaxStage)
@@ -194,6 +252,7 @@ public class GameplayController : Controller
 
     private void OnDestroy()
     {
-        StopCoroutine(_playFxRoutine);
+        if (_playFxRoutine != null)
+            StopCoroutine(_playFxRoutine);
     }
 }

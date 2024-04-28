@@ -4879,6 +4879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _delay: 1.5
+  _isDestroy: 1
 --- !u!1 &6913436602801799981
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class BossVuongLT : CharacterObject
     [SerializeField] private Canvas _canvas;
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private GameObject _explosionPrefab;
+    [SerializeField] private CryerFollowBoss[] _cryersFollow;
 
     private const string IdleAnim = "BossIdle", MoveAnim = "BossMove";
     private int _isDamagedProperty;
@@ -75,7 +76,18 @@ public class BossVuongLT : CharacterObject
             StopCoroutine(_bossMoveRoutine);
 
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-        gameObject.SetActive(false);
+        StartCoroutine(Co_Die());
+    }
+
+    private IEnumerator Co_Die()
+    {
+        _sprite.enabled = false;
+        _canvas.gameObject.SetActive(false);
+        foreach(var i in _cryersFollow)
+            i.Anim.Stop();
+
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
     }
 
     private void ReachTargetBoss()

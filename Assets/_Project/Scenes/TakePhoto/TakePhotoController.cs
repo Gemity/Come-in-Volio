@@ -28,6 +28,7 @@ public class TakePhotoController : Controller
 
     private IEnumerator Start()
     {
+        AudioManager.Instance.StopBgm();
         yield return _shield.DOFade(0, 1).SetEase(Ease.Linear).WaitForCompletion();
         yield return new WaitForSeconds(0.2f);
         _effAppearArmy.SetActive(true);

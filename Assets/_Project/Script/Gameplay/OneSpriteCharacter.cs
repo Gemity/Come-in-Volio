@@ -10,7 +10,7 @@ public class OneSpriteCharacter : CharacterObject
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private TMP_Text _textDispalay;
     [SerializeField] private GameObject _explosionPrefab;
-    [SerializeField] private Animation _animation;
+    [SerializeField] protected Animation _animation;
 
     private int _isDamagedProperty;
     private void Awake()

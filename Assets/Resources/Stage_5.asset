@@ -97,13 +97,13 @@ MonoBehaviour:
         characterGroupId: 10
     - Key: 30
       Value:
-        spawnGroupId: 4
+        spawnGroupId: 9
         characterGroupId: 16
     - Key: 31
       Value:
-        spawnGroupId: 4
+        spawnGroupId: 5
         characterGroupId: 6
     - Key: 40
       Value:
-        spawnGroupId: 4
+        spawnGroupId: 2
         characterGroupId: 100

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CryerFollowBoss : OneSpriteCharacter
 {
+    public Animation Anim => _animation;
     public override int Score => -1;
     private void Start()
     {
