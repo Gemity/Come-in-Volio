@@ -553,9 +553,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4035515765047549210, guid: 540094e00c40a7b42b35f22490ddc40c, type: 3}
+      propertyPath: m_text
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6282227796148534207, guid: 540094e00c40a7b42b35f22490ddc40c, type: 3}
+      propertyPath: m_text
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7305145341338491968, guid: 540094e00c40a7b42b35f22490ddc40c, type: 3}
       propertyPath: m_Name
       value: Node (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491360784818288096, guid: 540094e00c40a7b42b35f22490ddc40c, type: 3}
+      propertyPath: m_text
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8787264429510834979, guid: 540094e00c40a7b42b35f22490ddc40c, type: 3}
       propertyPath: _stageId
@@ -706,6 +718,27 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 420444434872395732, guid: 2d1598b7ee0a9d545b25a3201d7cf98c, type: 3}
   m_PrefabInstance: {fileID: 998997429}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &998997431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8125344567287781112, guid: 2d1598b7ee0a9d545b25a3201d7cf98c, type: 3}
+  m_PrefabInstance: {fileID: 998997429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &998997432
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998997431}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d0bf4b17eea109f47a8206ff5bd0fab4, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d0bf4b17eea109f47a8206ff5bd0fab4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1036208957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Controller: {fileID: 1387962}
-  m_AnimationType: 0
+  m_AnimationType: 1
   m_ShowEaseType: 17
   m_HideEaseType: 17
 --- !u!224 &1997761295
@@ -1950,10 +1983,6 @@ PrefabInstance:
     - target: {fileID: 7305145341338491968, guid: 540094e00c40a7b42b35f22490ddc40c, type: 3}
       propertyPath: m_Name
       value: Node
-      objectReference: {fileID: 0}
-    - target: {fileID: 8787264429510834979, guid: 540094e00c40a7b42b35f22490ddc40c, type: 3}
-      propertyPath: _stageId
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 540094e00c40a7b42b35f22490ddc40c, type: 3}

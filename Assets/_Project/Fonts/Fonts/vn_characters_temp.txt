@@ -1,0 +1,16 @@
+a	ă	â	b	e	ê	g	i	k	o	ô	ơ	p	t	u	ư	v	y	z
+á	ắ	ấ	c	é	ế	gi	í	kh	ó	ố	ớ	ph	th	ú	ứ	x	ý	
+à	ằ	ầ	d	è	ề	h	ì	l	ò	ồ	ờ	q	tr	ù	ừ		ỳ	
+ả	ẳ	ẩ	đ	ẻ	ể	ỉ	m		ỏ	ổ	ở	r		ủ	ử		ỷ	
+ã	ẵ	ẫ		ẽ	ễ	ĩ	n		õ	ỗ	ỡ	s		ũ	ữ		ỹ	
+ạ	ặ	ậ		ẹ	ệ	ị	nh		ọ	ộ	ợ			ụ	ự		ỵ	
+
+A	Ă	Â	B	E	Ê	G	I	K	O	Ô	Ơ	P	T	U	Ư	V	Y	Z
+Á	Ắ	Ấ	C	É	Ế	GI	Í	KH	Ó	Ố	Ớ	PH	TH	Ú	Ứ	X	Ý	
+À	Ằ	Ầ	D	È	Ề	H	Ì	L	Ò	Ồ	Ờ	Q	TR	Ù	Ừ		Ỳ	
+Ả	Ẳ	Ẩ	Đ	Ẻ	Ể	Ỉ	M		Ỏ	Ổ	Ở	R		Ủ	Ử		Ỷ	
+Ã	Ẵ	Ẫ		Ẽ	Ễ	Ĩ	N		Õ	Ỗ	Ỡ	S		Ũ	Ữ		Ỹ	
+Ạ	Ặ	Ậ		Ẹ	Ệ	Ị	NH		Ọ	Ộ	Ợ			Ụ	Ự		Ỵ	
+
+
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ …

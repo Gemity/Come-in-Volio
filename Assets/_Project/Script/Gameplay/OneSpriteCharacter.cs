@@ -69,6 +69,6 @@ public class OneSpriteCharacter : CharacterObject
             return;
 
         if (transform.position.y < _moveYTarget)
-            LeanPool.Despawn(this);
+            Destroy(gameObject);
     }
 }

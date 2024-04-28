@@ -27,5 +27,13 @@ public class WinController : Controller
     {
         _canvas.worldCamera = Manager.Object.UICamera;
         DOTween.To(() => 0, value => _scoreText.text = value.ToString(), _score, 1);
+
+        if (User.Sound)
+            AudioManager.Instance.PlaySfx("Win-music");
+    }
+
+    public void OnNext()
+    {
+        Manager.Load(MapController.MAP_SCENE_NAME);
     }
 }

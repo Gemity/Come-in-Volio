@@ -45,6 +45,9 @@ public class Player : MonoBehaviour
                 _hintDir.DOFade(0, 0.2f).OnComplete(() => _hintDir.color = Vector4.one);
                 _target.transform.position = vector;
                 LeanPool.Spawn(_bulletFalling);
+
+                if(User.Sound)
+                    AudioManager.Instance.PlaySfx("Shoot");
             }
         }
     }

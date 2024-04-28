@@ -96,10 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08fbd8090a3c374bb6df816b6649f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
+  _moveYTarget: -4
   _appearEffPreafab: {fileID: 2823046148382110969, guid: 8b501e192f1abc2459806a438660d799, type: 3}
   _sprite: {fileID: 2440159643547360091}
   _textDispalay: {fileID: 0}
   _explosionPrefab: {fileID: 6913175608874884353, guid: df8062f84ad525a4a96c61678893e03f, type: 3}
+  _animation: {fileID: 0}
 --- !u!61 &6640032540823020144
 BoxCollider2D:
   m_ObjectHideFlags: 0

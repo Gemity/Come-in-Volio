@@ -13,9 +13,8 @@ public class SpawnCharacter : MonoBehaviour
     private float _timer = 0;
     private StageData _stageData;
     private Coroutine _spawnRoutine;
-    private CharacterObject _lastCharacter;
     private List<CharacterObject> _characterObjects;
-
+    private int _characterDestroy = 0;
     private WaitForSeconds wait_0_5s = new WaitForSeconds(0.5f);
     public void Setup(StageData stageData)
     {
@@ -55,18 +54,22 @@ public class SpawnCharacter : MonoBehaviour
                     CharacterGroupSetting characterGroup = CharacterGroupSettingSO.Instance.GetCharacterGroupById(setting.characterGroupId);
                    
 
-                    Vector3 pos;
-                    if(spawnGroup.rayId > 0)
+                    Vector3 pos = Vector3.zero;
+                    if( 0 < spawnGroup.id && spawnGroup.id <= 3)
                     {
                         float x = (spawnGroup.rayId - 2) * Const.Distance_Each_Ray;
                         pos = new Vector3(x, _spawnPosY, 0);
                     }
-                    else
+                    else if(spawnGroup.id == 4)
                     {
                         float x = Random.Range(spawnGroup.boundCenter.x - spawnGroup.boundSize.x, spawnGroup.boundCenter.x + spawnGroup.boundSize.x);
                         float y = Random.Range(spawnGroup.boundCenter.y - spawnGroup.boundSize.y, spawnGroup.boundCenter.y + spawnGroup.boundSize.y);
 
                         pos = new Vector3(x, y, 0);
+                    }
+                    else if(spawnGroup.id >= 5)
+                    {
+                        pos = new Vector3(spawnGroup.absolutePosition.x, spawnGroup.absolutePosition.y, 0);
                     }
 
                     if (characterGroup.prefab.AppearEffPrefab != null)
@@ -78,12 +81,18 @@ public class SpawnCharacter : MonoBehaviour
                     CharacterObject obj = Instantiate<CharacterObject>(characterGroup.prefab);
                     obj.transform.position = pos;
                     obj.onDie += GameplayController.Instance.UpdateScore;
-                    obj.onDestroy += x => _characterObjects.Remove(obj);
+                    obj.onDestroy += x =>
+                    {
+                        _characterDestroy++;
+                        _characterObjects.Remove(obj);
+                        if (_characterDestroy == _stageData.SpawnGroupSetting.Count)
+                            GameplayController.Instance.CheckGameState();
+                    };
+
                     obj.name = data.name;
                     obj.Setup(data, characterGroup);
                     _characterObjects.Add(obj);
 
-                    _lastCharacter = obj;
                     timeline.RemoveAt(i);
                     i--;
                 }
@@ -92,8 +101,6 @@ public class SpawnCharacter : MonoBehaviour
             yield return null;
             _timer += Time.deltaTime;
         }
-
-        _lastCharacter.onDestroy += _ => GameplayController.Instance.CheckLoseGame();
     }
 
     public void Stop()

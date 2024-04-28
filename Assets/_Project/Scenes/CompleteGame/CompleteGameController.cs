@@ -38,6 +38,8 @@ public class CompleteGameController : Controller
 
     private IEnumerator Co_Next()
     {
+        if (User.Sound)
+            AudioManager.Instance.PlaySfx("Pop-up fade");
         yield return _canvasGroup.DOFade(0,0.4f).WaitForCompletion();
         yield return _reciveReward.DOAnchorPosY(0, 0.4f).SetEase(Ease.OutBack);
         _get1Bil.DOScale(1, 0.3f).SetEase(Ease.OutBack).OnComplete(() =>

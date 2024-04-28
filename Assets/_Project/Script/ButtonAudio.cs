@@ -1,3 +1,5 @@
+using Lean.Common;
+using Lean.Pool;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +14,6 @@ public class ButtonAudio : MonoBehaviour
 
     public void Play()
     {
-        return;
         if (AudioManager.Instance != null && User.Sound)
         {
             if (string.IsNullOrEmpty(_sfx))

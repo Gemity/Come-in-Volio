@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SS.View;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class LoseController : Controller
 {
@@ -10,6 +12,12 @@ public class LoseController : Controller
     public override string SceneName()
     {
         return LOSE_SCENE_NAME;
+    }
+
+    private void Start()
+    {
+        if (User.Sound)
+            AudioManager.Instance.PlaySfx("Lose-sound");
     }
 
     public void PlayAgain()

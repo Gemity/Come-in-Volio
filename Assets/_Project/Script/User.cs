@@ -9,6 +9,7 @@ public static class User
     {
         public int stageId;
         public bool sound;
+        public bool showTutorial;
         public void Init()
         {
             stageId = 1;
@@ -24,6 +25,7 @@ public static class User
     private static UserData data;
     public static int StageId { get { return data.stageId; } set { data.stageId = value; } }
     public static bool Sound { get { return data.sound; } set { data.sound = value; } }
+    public static bool ShowTutorial { get {  return data.showTutorial; } set { data.showTutorial = value;  } }
     private static void Load()
     {
         string json = PlayerPrefs.GetString(KeySave, string.Empty);

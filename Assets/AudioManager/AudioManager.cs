@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Audio;
@@ -132,11 +132,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource voiceSource
     {
         get { return m_VoiceSource; }
-    }
-
-    public void PlayButtonTapSfx()
-    {
-        PlaySfx(m_ButtonTapSfx);
     }
 
     /// <summary>
@@ -312,6 +307,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayButtonTapSfx()
+    {
+        PlaySfx(m_ButtonTapSfx);
+    }
 
     public void CacheClip(AudioClip clip, string audioName)
     {

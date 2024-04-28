@@ -17,7 +17,7 @@ MonoBehaviour:
     _serializedList:
     - Key: 3
       Value:
-        spawnGroupId: 4
+        spawnGroupId: 5
         characterGroupId: 9
     - Key: 5
       Value:
@@ -41,11 +41,11 @@ MonoBehaviour:
         characterGroupId: 7
     - Key: 23
       Value:
-        spawnGroupId: 4
+        spawnGroupId: 8
         characterGroupId: 14
     - Key: 23.0001
       Value:
-        spawnGroupId: 4
+        spawnGroupId: 6
         characterGroupId: 15
     - Key: 29
       Value:

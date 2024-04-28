@@ -41,6 +41,8 @@ public class TakePhotoController : Controller
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => FingerDownThisFrame());
         _splash.gameObject.SetActive(true);
+        if (User.Sound)
+            AudioManager.Instance.PlaySfx("camera shutter");
         yield return _shield.DOFade(0, 0.25f).WaitForCompletion();
         _splash.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.5f);
@@ -49,6 +51,8 @@ public class TakePhotoController : Controller
         _shield.color = new Color(0, 0, 0, 200f / 255f);
         for (int i = 0; i < _albumElement.Length; i++)
         {
+            if (User.Sound)
+                AudioManager.Instance.PlaySfx("Pop-up slide");
             yield return _albumElement[i].DOMoveY(0, 0.5f).SetEase(Ease.OutBack).WaitForCompletion();
             if (i > 0)
                 _albumElement[i - 1].gameObject.SetActive(false);
@@ -61,6 +65,8 @@ public class TakePhotoController : Controller
         yield return _canvasAlbum.DOFade(0, 0.5f).WaitForCompletion();
         yield return new WaitForSeconds(1);
         _endGame.SetActive(true);
+        if (User.Sound)
+            AudioManager.Instance.PlaySfx("Outro", 1, false, true);
     }
 
     private bool FingerDownThisFrame()

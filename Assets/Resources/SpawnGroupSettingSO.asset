@@ -18,18 +18,46 @@ MonoBehaviour:
     rayId: 1
     boundCenter: {x: 0, y: 0}
     boundSize: {x: 0, y: 0}
+    absolutePosition: {x: 0, y: 0}
   - name: Middle Ray
     id: 2
     rayId: 2
     boundCenter: {x: 0, y: 0}
     boundSize: {x: 0, y: 0}
+    absolutePosition: {x: 0, y: 0}
   - name: Right Ray
     id: 3
     rayId: 3
     boundCenter: {x: 0, y: 0}
     boundSize: {x: 0, y: 0}
+    absolutePosition: {x: 0, y: 0}
   - name: Inside View
     id: 4
     rayId: -1
     boundCenter: {x: 0, y: 6}
     boundSize: {x: 8, y: 4}
+    absolutePosition: {x: 0, y: 0}
+  - name: Left_Top
+    id: 5
+    rayId: -1
+    boundCenter: {x: 0, y: 6}
+    boundSize: {x: 8, y: 4}
+    absolutePosition: {x: -2.5, y: 8}
+  - name: Middle_Top
+    id: 6
+    rayId: -1
+    boundCenter: {x: 0, y: 6}
+    boundSize: {x: 8, y: 4}
+    absolutePosition: {x: 0, y: 8}
+  - name: Right_Top
+    id: 7
+    rayId: -1
+    boundCenter: {x: 0, y: 6}
+    boundSize: {x: 8, y: 4}
+    absolutePosition: {x: 2.5, y: 8}
+  - name: Left_Middle
+    id: 8
+    rayId: -1
+    boundCenter: {x: 0, y: 6}
+    boundSize: {x: 8, y: 4}
+    absolutePosition: {x: -2.5, y: 4}

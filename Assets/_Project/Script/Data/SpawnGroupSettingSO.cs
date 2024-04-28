@@ -11,6 +11,7 @@ public struct SpawnGroupSetting
     public float rayId;
     public Vector2 boundCenter;
     public Vector2 boundSize;
+    public Vector2 absolutePosition;
 }
 
 [CreateAssetMenu(fileName = "SpawnGroupSettingSO", menuName = "Gameplay/SpawnGroupSettingSO")]

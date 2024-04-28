@@ -4,8 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CharacterType
+{
+    Notset = 0, Single = 1, Group = 2, Boss = 3, Cryer = 4, MinhAnh = 5
+}
+
 public class CharacterObject : MonoBehaviour
 {
+    [SerializeField] protected CharacterType type;
     [SerializeField] protected float _moveYTarget = -4f;
     [SerializeField] private GameObject _appearEffPreafab;
 
@@ -27,6 +33,8 @@ public class CharacterObject : MonoBehaviour
     public virtual int Health => _health;
     public virtual int Score => _groupSetting.score;
     public GameObject AppearEffPrefab => _appearEffPreafab;
+    public CharacterType Type => type;
+    public int Id => _characterData.id;
 
     public virtual void Setup(CharacterData characterData, CharacterGroupSetting characterGroup)
     {

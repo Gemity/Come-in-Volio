@@ -73,7 +73,7 @@ MonoBehaviour:
         characterGroupId: 5
     - Key: 33
       Value:
-        spawnGroupId: 4
+        spawnGroupId: 6
         characterGroupId: 6
     - Key: 33.0001
       Value:

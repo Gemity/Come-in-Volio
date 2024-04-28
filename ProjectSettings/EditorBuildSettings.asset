@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/TakePhoto/TakePhoto.unity
     guid: 02da9da1a3c31104880fc9b387b66be4
+  - enabled: 1
+    path: Assets/_Project/Scenes/Wanted/Wanted.unity
+    guid: 23d64e3694660044496bd8e740ad5156
   m_configObjects: {}

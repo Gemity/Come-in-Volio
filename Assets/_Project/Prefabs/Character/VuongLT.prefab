@@ -528,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1157805f10b42a4c8beeb6bcec7fd9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 3
   _moveYTarget: 1
   _appearEffPreafab: {fileID: 0}
   _path:

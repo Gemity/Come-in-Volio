@@ -5,6 +5,9 @@ using SS.View;
 using TMPro;
 using Lean.Pool;
 using UnityEngine.TextCore.Text;
+using DG.Tweening;
+using UnityEngine.UI;
+using System.Security.Claims;
 
 public class GameplayController : Controller
 {
@@ -20,6 +23,10 @@ public class GameplayController : Controller
     [SerializeField] private GameObject _soundOn, _soundOff;
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private ScorePopup _scorePopup;
+    [SerializeField] private GameObject _tutorialContainer;
+    [SerializeField] private RectTransform _tutorialPanel;
+    [SerializeField] private Button _tutorialButton;
+    [SerializeField] private AudioClip[] _soundsHitBullet;
 
     [SerializeField] private int _debugStageId;
 
@@ -28,7 +35,9 @@ public class GameplayController : Controller
 
     private StageData _stageData;
     private int _score = 0;
+    private Coroutine _playFxRoutine;
 
+    private int _countGroup = 0;
     private void Awake()
     {
         _instance = this;    
@@ -38,9 +47,12 @@ public class GameplayController : Controller
     {
         int stageId = 1;
         if (_debugStageId > 0)
+        {
             stageId = _debugStageId;
-        else if (data != null)
-            stageId = (int)data;
+            User.StageId = stageId;
+        }
+        else
+            stageId = User.StageId;
 
         _stageData = Resources.Load<StageData>($"Stage_{stageId}");
     }
@@ -48,9 +60,49 @@ public class GameplayController : Controller
     private void Start()
     {
         _scoreText.text = $"{_score}/{_stageData.ScoreRequire}";
+        if (!User.ShowTutorial)
+        {
+            _tutorialContainer.SetActive(true);
+            if (User.Sound)
+                AudioManager.Instance.PlaySfx("Pop-up slide");
+            _tutorialPanel.DOAnchorPosY(108, 0.5f).SetEase(Ease.OutBack);
+            _tutorialButton.onClick.AddListener(() =>
+            {
+                if (User.Sound)
+                    AudioManager.Instance.PlaySfx("Pop-up slide");
+                _tutorialPanel.DOAnchorPosY(1768, 0.5f).SetEase(Ease.InBack).OnComplete(() =>
+                {
+                    _tutorialContainer.SetActive(false);
+                    PlayGame();
+                    User.ShowTutorial = true;
+                });
+            });
+        }
+        else
+        {
+            PlayGame();
+        }
+    }
+
+    public void PlayGame()
+    {
         _spawnCharacter.Setup(_stageData);
         _player.Init();
         InputControl.Instance.EnableFinger = true;
+        if (User.Sound)
+            AudioManager.Instance.PlayBgm("BGM");
+
+        _playFxRoutine = StartCoroutine(Co_Playfx());
+    }
+    
+    private IEnumerator Co_Playfx()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(2f, 7f));
+            if (User.Sound)
+                AudioManager.Instance.PlaySfx("Brr00");
+        }
     }
 
     public void ResignCallBack4Object(CharacterObject objetc)
@@ -63,6 +115,8 @@ public class GameplayController : Controller
         User.Sound = !User.Sound;
         _soundOff.SetActive(!User.Sound);
         _soundOn.SetActive(User.Sound);
+
+        AudioManager.Instance.pauseBgm = !User.Sound;
     }
 
     public void UpdateScore(CharacterObject character)
@@ -73,8 +127,25 @@ public class GameplayController : Controller
         var popupScore = LeanPool.Spawn<ScorePopup>(_scorePopup, character.transform.position, Quaternion.identity);
         popupScore.Setup(character.Score);
 
-        if (_score >= _stageData.ScoreRequire)
-            OnWin();
+        if(User.Sound && character.Score > 0 && character.Type != CharacterType.Group)
+        {
+            var cliip = _soundsHitBullet[Random.Range(0, _soundsHitBullet.Length)];
+            AudioManager.Instance.PlaySfx(cliip);
+        }
+
+        if(User.StageId == 3 && character.Id == 2)
+        {
+            AudioManager.Instance.PlaySfx("yeah02");
+        }
+        else if(User.StageId == 4 && (character.Id == 8 || character.Id == 9))
+        {
+            _countGroup++;
+            if(_countGroup > 1)
+            {
+                AudioManager.Instance.PlaySfx("yeah02");
+                _countGroup = 0;
+            }
+        }
     }
 
     public void UpdateScore(int score, Vector3 popupPos)
@@ -84,17 +155,16 @@ public class GameplayController : Controller
 
         var popupScore = LeanPool.Spawn<ScorePopup>(_scorePopup, popupPos, Quaternion.identity);
         popupScore.Setup(score);
-
-        if (_score >= _stageData.ScoreRequire)
-            OnWin();
     }
 
-    public void CheckLoseGame()
+    public void CheckGameState()
     {
         if(_score < _stageData.ScoreRequire)
         {
             OnLose();
         }
+        else
+            OnWin();
     }
 
     private void OnLose()
@@ -120,5 +190,10 @@ public class GameplayController : Controller
     {
         _spawnCharacter.Stop();
         Manager.Add(CompleteGameController.COMPLETEGAME_SCENE_NAME);
+    }
+
+    private void OnDestroy()
+    {
+        StopCoroutine(_playFxRoutine);
     }
 }
