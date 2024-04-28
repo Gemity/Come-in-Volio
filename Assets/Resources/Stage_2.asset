@@ -51,11 +51,11 @@ MonoBehaviour:
       Value:
         spawnGroupId: 2
         characterGroupId: 3
-    - Key: 26
+    - Key: 27
       Value:
         spawnGroupId: 3
         characterGroupId: 2
-    - Key: 25
+    - Key: 28
       Value:
         spawnGroupId: 2
         characterGroupId: 2

@@ -77,7 +77,7 @@ MonoBehaviour:
     speedY: 1.8
     prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
     description: 
-  - name: Group_S3
+  - name: Jacat
     groupId: 6
     health: 4
     score: 10
@@ -108,4 +108,44 @@ MonoBehaviour:
     speedX: 0
     speedY: 1
     prefab: {fileID: 2357790803352936734, guid: 693eede5890fc0144af956a8835fcdee, type: 3}
+    description: 
+  - name: Govo
+    groupId: 9
+    health: 4
+    score: 10
+    speedX: 0
+    speedY: 1.6
+    prefab: {fileID: 2440159642414412038, guid: bcd7aceb948539a469e50a8b7e8c60a9, type: 3}
+    description: 
+  - name: 1Door
+    groupId: 14
+    health: 4
+    score: 10
+    speedX: 0
+    speedY: 1.6
+    prefab: {fileID: 2440159642414412038, guid: 43d2acb37ed487b4a9ef97e95d36ca73, type: 3}
+    description: 
+  - name: Services
+    groupId: 15
+    health: 4
+    score: 10
+    speedX: 0
+    speedY: 1.6
+    prefab: {fileID: 2440159642414412038, guid: 7e2871e6acafeb04d9d7e1f85b131a71, type: 3}
+    description: 
+  - name: Fidra
+    groupId: 16
+    health: 4
+    score: 10
+    speedX: 0
+    speedY: 1.6
+    prefab: {fileID: 2440159642414412038, guid: 57acef61bb66c7a4d82196fe80508c00, type: 3}
+    description: 
+  - name: AnhDM
+    groupId: 17
+    health: 4
+    score: 10
+    speedX: 0
+    speedY: 2
+    prefab: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
     description: 

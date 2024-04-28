@@ -12,10 +12,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577a3c8d30e2ffb42bc5c78ecc18415e, type: 3}
   m_Name: Stage_4
   m_EditorClassIdentifier: 
-  _scoreRequire: 10
+  _scoreRequire: 60
   _spawnGroupSetting:
     _serializedList:
-    - Key: 2
+    - Key: 3
+      Value:
+        spawnGroupId: 4
+        characterGroupId: 9
+    - Key: 5
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 8
+    - Key: 5.00001
       Value:
         spawnGroupId: 2
-        characterGroupId: 100
+        characterGroupId: 8
+    - Key: 5.00002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 8
+    - Key: 10
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 7
+    - Key: 16
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 7
+    - Key: 23
+      Value:
+        spawnGroupId: 4
+        characterGroupId: 14
+    - Key: 23.0001
+      Value:
+        spawnGroupId: 4
+        characterGroupId: 15
+    - Key: 29
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 8
+    - Key: 29.00001
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 8
+    - Key: 29.00002
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 8
+    - Key: 33
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 8
+    - Key: 36
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 8
+    - Key: 41
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 8
+    - Key: 41.0001
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 8
+    - Key: 45
+      Value:
+        spawnGroupId: 1
+        characterGroupId: 13
+    - Key: 45.00001
+      Value:
+        spawnGroupId: 3
+        characterGroupId: 13
+    - Key: 45.00002
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 13
+    - Key: 47
+      Value:
+        spawnGroupId: 2
+        characterGroupId: 17

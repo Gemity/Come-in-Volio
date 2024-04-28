@@ -71,15 +71,15 @@ MonoBehaviour:
       Value:
         spawnGroupId: 3
         characterGroupId: 5
-    - Key: 31
+    - Key: 33
       Value:
         spawnGroupId: 4
         characterGroupId: 6
-    - Key: 33
+    - Key: 33.0001
       Value:
         spawnGroupId: 2
         characterGroupId: 4
-    - Key: 33.0001
+    - Key: 33.0002
       Value:
         spawnGroupId: 1
         characterGroupId: 5
