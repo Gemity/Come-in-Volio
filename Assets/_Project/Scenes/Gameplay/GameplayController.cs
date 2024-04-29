@@ -34,6 +34,7 @@ public class GameplayController : Controller
     [SerializeField] private AudioClip[] _soundsHitBullet;
     [SerializeField] private Image _notiDanger;
     [SerializeField] private TMP_Text _targetScore;
+    [SerializeField] private GameObject _splash;
 
     [SerializeField] private int _debugStageId;
 
@@ -130,6 +131,13 @@ public class GameplayController : Controller
         StartCoroutine(Co_DisplayTargetScore());
     }
     
+    public IEnumerator Co_Splash()
+    {
+        _splash.SetActive(true );
+        yield return new WaitForSeconds(0.1f);
+        _splash.SetActive(false);
+    }
+
     private IEnumerator Co_DisplayTargetScore()
     {
         _targetScore.gameObject.SetActive(true);

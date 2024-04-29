@@ -59,7 +59,7 @@ public class BossVuongLT : CharacterObject
         _immune = true;
         _sprite.material.SetInteger(_isDamagedProperty, 1);
         _healthBar.DOFillAmount(_healthBar.fillAmount - _percentPerHp, 0.15f);
-
+        StartCoroutine(GameplayController.Instance.Co_Splash());
         yield return new WaitForSeconds(0.1f);
         _sprite.material.SetInteger(_isDamagedProperty, 0);
         _immune = false;

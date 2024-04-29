@@ -63,9 +63,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584671529514095673, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
+      propertyPath: _explosionPrefab
+      value: 
+      objectReference: {fileID: 6913175608874884353, guid: df8062f84ad525a4a96c61678893e03f, type: 3}
     - target: {fileID: 2584671529514095674, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
       propertyPath: m_Name
-      value: Single
+      value: MinhAnh
       objectReference: {fileID: 0}
     - target: {fileID: 2584671529754244165, guid: 3aa5b84e335a3cc44bd0ba5762083b5a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

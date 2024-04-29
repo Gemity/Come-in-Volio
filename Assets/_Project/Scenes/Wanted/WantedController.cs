@@ -14,7 +14,8 @@ public class WantedController : Controller
     {
         return WANTED_SCENE_NAME;
     }
-
+    [SerializeField] private GameObject _shakeObj;
+    [SerializeField] private RectTransform _dinhTf;
     [SerializeField] private TMP_Text _requestText;
     [SerializeField] private TMP_Text _getKeoText;
     [SerializeField] private Transform _requestTf, _getKeoTf;
@@ -28,8 +29,10 @@ public class WantedController : Controller
     private void Start()
     {
         Sequence sq = DOTween.Sequence();
-        sq.Append(_poster.DOScale(1, 0.4f).From(2.5f))
-          .AppendInterval(0.2f)
+        sq.Append(_poster.DOScale(1, 0.25f).From(2.5f))
+          .AppendCallback(() => _shakeObj.transform.DOShakePosition(1,20))
+          .AppendInterval(0.5f)
+          .Append(_dinhTf.DOAnchorPos(new Vector2(-60,875), 0.2f))
           .Append(_requestTf.DOScale(1, 0.4f).From(0).SetEase(Ease.OutBack))
           .AppendCallback(() =>
           {
@@ -55,6 +58,6 @@ public class WantedController : Controller
 
     public void Next()
     {
-        Manager.Load(GameplayController.GAMEPLAY_SCENE_NAME);
+        Manager.Load(MapController.MAP_SCENE_NAME);
     }
 }
