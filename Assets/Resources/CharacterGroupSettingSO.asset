@@ -95,7 +95,7 @@ MonoBehaviour:
     description: 
   - name: Leader_S5
     groupId: 12
-    health: 5
+    health: 10
     score: 5
     speedX: 0
     speedY: 1.8
@@ -148,4 +148,20 @@ MonoBehaviour:
     speedX: 1
     speedY: 2
     prefab: {fileID: 1587691658280012128, guid: 8ecf3f8ed3d383746a9afa68a55f265c, type: 3}
+    description: 
+  - name: Boss2
+    groupId: 200
+    health: 5
+    score: 10
+    speedX: 1
+    speedY: 2
+    prefab: {fileID: 7312350196086283066, guid: cc3518ddde787bf49884260a3b34e98f, type: 3}
+    description: 
+  - name: '?'
+    groupId: 30
+    health: 2
+    score: 10
+    speedX: 0
+    speedY: 1.8
+    prefab: {fileID: 2584671529514095673, guid: 9fb33509dc630e3428fec1c9864e9d4b, type: 3}
     description: 
