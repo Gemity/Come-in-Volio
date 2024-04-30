@@ -36,7 +36,7 @@ public class TakePhotoController : Controller
         _effAppearArmy.SetActive(true);
         yield return new WaitForSeconds(1);
         _spriteRendererGroup.Show();
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3.5f);
         _effAppearArmy.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         _captureGo.SetActive(true);
@@ -48,7 +48,7 @@ public class TakePhotoController : Controller
             AudioManager.Instance.PlaySfx("camera shutter");
         yield return _shield.DOFade(0, 0.25f).WaitForCompletion();
         _splash.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         _captureGo.SetActive(false);
         _album.SetActive(true);
         _shield.color = new Color(0, 0, 0, 200f / 255f);
@@ -63,10 +63,13 @@ public class TakePhotoController : Controller
             {
                 _happyBirthday.DOFade(1, 0.5f);
                 _confetti.SetActive(true);
+                yield return new WaitForSeconds(3);
             }
 
-            yield return new WaitForSeconds(0.5f);
-            yield return new WaitUntil(() => FingerDownThisFrame());
+            if (i == 1)
+                yield return new WaitForSeconds(1.5f);
+            else
+                yield return new WaitForSeconds(0.7f);
         }
 
         yield return _canvasAlbum.DOFade(0, 0.5f).WaitForCompletion();
