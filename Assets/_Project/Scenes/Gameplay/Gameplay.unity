@@ -188,7 +188,7 @@ MonoBehaviour:
   _notiDanger: {fileID: 1810742958}
   _targetScore: {fileID: 287538415}
   _splash: {fileID: 1810488503}
-  _debugStageId: 5
+  _debugStageId: -1
 --- !u!114 &1387963
 MonoBehaviour:
   m_ObjectHideFlags: 0
