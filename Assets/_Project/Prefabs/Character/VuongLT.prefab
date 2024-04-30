@@ -553,6 +553,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 6586665556411449812, guid: 86211b914b2e2754ba12c2402a8f88cb, type: 3}
   _cryersFollow: []
   _collider: {fileID: 4402351264678764371}
+  _shadow: {fileID: 8554983021743147212}
 --- !u!212 &1071720437444696820
 SpriteRenderer:
   m_ObjectHideFlags: 0

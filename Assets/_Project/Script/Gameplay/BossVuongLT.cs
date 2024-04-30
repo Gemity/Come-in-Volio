@@ -17,6 +17,7 @@ public class BossVuongLT : CharacterObject
     [SerializeField] private GameObject _explosionPrefab;
     [SerializeField] private CryerFollowBoss[] _cryersFollow;
     [SerializeField] private Collider2D _collider;
+    [SerializeField] private GameObject _shadow;
 
     private const string IdleAnim = "BossIdle", MoveAnim = "BossMove";
     private int _isDamagedProperty;
@@ -86,7 +87,9 @@ public class BossVuongLT : CharacterObject
     {
         _sprite.enabled = false;
         _canvas.gameObject.SetActive(false);
-        _collider.enabled =false;
+        _collider.enabled = false;
+        _shadow.SetActive(false);
+
         if(_tweener != null)
             _tweener.Kill();
 
