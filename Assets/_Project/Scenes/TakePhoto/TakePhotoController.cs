@@ -32,16 +32,16 @@ public class TakePhotoController : Controller
         if (User.Sound)
             AudioManager.Instance.PlayBgm("Outro");
         yield return _shield.DOFade(0, 1).SetEase(Ease.Linear).WaitForCompletion();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         _effAppearArmy.SetActive(true);
         yield return new WaitForSeconds(1);
         _spriteRendererGroup.Show();
         yield return new WaitForSeconds(3.5f);
         _effAppearArmy.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         _captureGo.SetActive(true);
         _captureAnim.Play();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.5f);
         //yield return new WaitUntil(() => FingerDownThisFrame());
         _splash.gameObject.SetActive(true);
         if (User.Sound)
@@ -66,10 +66,10 @@ public class TakePhotoController : Controller
                 yield return new WaitForSeconds(3);
             }
 
-            if (i == 1)
-                yield return new WaitForSeconds(1.5f);
+            if (i == 0)
+                yield return new WaitForSeconds(1.2f);
             else
-                yield return new WaitForSeconds(0.7f);
+                yield return new WaitForSeconds(0.5f);
         }
 
         yield return _canvasAlbum.DOFade(0, 0.5f).WaitForCompletion();

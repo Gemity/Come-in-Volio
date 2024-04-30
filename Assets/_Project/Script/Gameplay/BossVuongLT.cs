@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Lean.Pool;
+using SS.View;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -15,11 +16,13 @@ public class BossVuongLT : CharacterObject
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private GameObject _explosionPrefab;
     [SerializeField] private CryerFollowBoss[] _cryersFollow;
+    [SerializeField] private Collider2D _collider;
 
     private const string IdleAnim = "BossIdle", MoveAnim = "BossMove";
     private int _isDamagedProperty;
     private float _percentPerHp;
     private Coroutine _bossMoveRoutine;
+    private Tween _tweener;
 
     private void Start()
     {
@@ -83,7 +86,11 @@ public class BossVuongLT : CharacterObject
     {
         _sprite.enabled = false;
         _canvas.gameObject.SetActive(false);
-        foreach(var i in _cryersFollow)
+        _collider.enabled =false;
+        if(_tweener != null)
+            _tweener.Kill();
+
+        foreach (var i in _cryersFollow)
             i.Anim.Stop();
 
         yield return new WaitForSeconds(1.5f);
@@ -111,7 +118,8 @@ public class BossVuongLT : CharacterObject
             _animation.Play(MoveAnim);
             for (int i = 0; i < _path.Length; i++)
             {
-                yield return transform.DOMove(_path[i], 2).From(transform.position).SetEase(Ease.Linear).WaitForCompletion();
+                _tweener = transform.DOMove(_path[i], 2).From(transform.position).SetEase(Ease.Linear);
+                yield return _tweener.WaitForCompletion();
             }
         }
     }

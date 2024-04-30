@@ -54,9 +54,9 @@ public class CompleteGameController : Controller
         yield return _reciveReward.DOAnchorPosY(0, 0.4f).SetEase(Ease.OutBack);
         if (User.Sound)
             AudioManager.Instance.PlaySfx("getMoney");
-        _tweener = _get1Bil.DOScale(1, 0.3f).SetEase(Ease.OutBack).OnComplete(() =>
+        _get1Bil.DOScale(1, 0.3f).SetEase(Ease.OutBack).OnComplete(() =>
         {
-            _get1Bil.DOScale(1.1f, 0.3f).From(1).SetLoops(-1, LoopType.Yoyo);
+            _tweener = _get1Bil.DOScale(1.1f, 0.3f).From(1).SetLoops(-1, LoopType.Yoyo);
         });
         _get5mPerMonth.DOScale(1, 0.3f).SetEase(Ease.OutBack);
     }
@@ -68,12 +68,11 @@ public class CompleteGameController : Controller
         {
             foreach (var i in _extraGet1Bill)
             {
-                var tween = i.DOScale(1, 0.3f).SetEase(Ease.OutBack).OnComplete(() =>
+                i.DOScale(1, 0.3f).SetEase(Ease.OutBack).OnComplete(() =>
                 {
-                    i.DOScale(1.1f, 0.3f).From(1).SetLoops(-1, LoopType.Yoyo);
+                    var tween = i.DOScale(1.1f, 0.3f).From(1).SetLoops(-1, LoopType.Yoyo);
+                    _tweenersExtra.Add(tween);
                 });
-
-                _tweenersExtra.Add(tween);
             }
 
             _get1Bil.gameObject.SetActive(false);

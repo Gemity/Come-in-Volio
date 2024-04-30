@@ -728,7 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Controller: {fileID: 1387962}
-  m_AnimationType: 6
+  m_AnimationType: 1
   m_ShowEaseType: 17
   m_HideEaseType: 17
 --- !u!224 &1997761295
