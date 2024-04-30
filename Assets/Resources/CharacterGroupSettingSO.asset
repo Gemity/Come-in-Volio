@@ -103,10 +103,10 @@ MonoBehaviour:
     description: 
   - name: BossVuongLt
     groupId: 100
-    health: 10
+    health: 15
     score: 1000
     speedX: 0
-    speedY: 1.5
+    speedY: 2
     prefab: {fileID: 2357790803352936734, guid: 693eede5890fc0144af956a8835fcdee, type: 3}
     description: 
   - name: Govo

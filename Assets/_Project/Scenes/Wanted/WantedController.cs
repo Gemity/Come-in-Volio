@@ -26,7 +26,7 @@ public class WantedController : Controller
     [SerializeField] private Transform _nextTf;
     [SerializeField] private Transform _poster;
 
-    private void Start()
+    private IEnumerator Start()
     {
         Sequence sq = DOTween.Sequence();
         sq.Append(_poster.DOScale(1, 0.25f).From(2.5f))
@@ -52,6 +52,9 @@ public class WantedController : Controller
           .AppendCallback(() => AudioManager.Instance.StopSfx())
           .AppendInterval(0.5f)
           .Append(_nextTf.DOScale(1, 0.4f).From(0).SetEase(Ease.OutBack));
+
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.Instance.PlaySfx("poster hit");
     }
 
 

@@ -391,7 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2400280970637344525}
   m_Layer: 0
-  m_Name: VuongLt
+  m_Name: VuongLt TakePhoto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

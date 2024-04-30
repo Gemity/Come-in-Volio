@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577a3c8d30e2ffb42bc5c78ecc18415e, type: 3}
   m_Name: Stage_1
   m_EditorClassIdentifier: 
-  _scoreRequire: 15
+  _scoreRequire: 7
   _spawnGroupSetting:
     _serializedList:
     - Key: 4

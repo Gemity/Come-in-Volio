@@ -98,7 +98,7 @@ public class GameplayController : Controller
 
     private void Update()
     {
-        if(User.StageId == 5 && !_dangerBoss && Time.time > 35)
+        if(User.StageId == 5 && !_dangerBoss && Time.timeSinceLevelLoad > 35 && _state == GameState.Playing)
         {
             _dangerBoss = true;
             ShowDanger();
@@ -110,7 +110,7 @@ public class GameplayController : Controller
         if (User.Sound)
             AudioManager.Instance.PlaySfx("danger", 1, false, true);
         _notiDanger.gameObject.SetActive(true);
-        _notiDanger.DOFade(1, 1).From(0).SetLoops(8, LoopType.Yoyo).OnComplete(() =>
+        _notiDanger.DOFade(1, 1).From(0).SetLoops(6, LoopType.Yoyo).OnComplete(() =>
         {
             AudioManager.Instance.StopSfx();
             _notiDanger.gameObject.SetActive(false);
@@ -181,6 +181,9 @@ public class GameplayController : Controller
     public void UpdateScore(CharacterObject character)
     {
         _score += character.Score;
+        if(_score < 0)
+            _score = 0;
+
         _scoreText.text = $"{_score}/{_stageData.ScoreRequire}";
 
         var popupScore = LeanPool.Spawn<ScorePopup>(_scorePopup, character.transform.position, Quaternion.identity);

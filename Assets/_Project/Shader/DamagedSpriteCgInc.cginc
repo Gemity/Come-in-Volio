@@ -73,6 +73,7 @@ v2f SpriteVert(appdata_t IN)
 sampler2D _MainTex;
 sampler2D _AlphaTex;
 int _IsDamaged;
+fixed4 _ColorDamaged;
 
 fixed4 SampleSpriteTexture (float2 uv)
 {
@@ -83,8 +84,11 @@ fixed4 SampleSpriteTexture (float2 uv)
     color.a = lerp (color.a, alpha.r, _EnableExternalAlpha);
 #endif
 
-    if(_IsDamaged == 1)
-        color = (1, 1, 1, color.a);
+    if (_IsDamaged == 1)
+    {
+        color.rgb = _ColorDamaged.rgb;
+    }
+
     return color;
 }
 

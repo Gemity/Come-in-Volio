@@ -25,10 +25,12 @@ public class TakePhotoController : Controller
     [SerializeField] private Image _happyBirthday;
     [SerializeField] private CanvasGroup _canvasAlbum;
     [SerializeField] private GameObject _endGame;
+    [SerializeField] private GameObject _confetti;
 
     private IEnumerator Start()
     {
-        AudioManager.Instance.StopBgm();
+        if (User.Sound)
+            AudioManager.Instance.PlayBgm("Outro");
         yield return _shield.DOFade(0, 1).SetEase(Ease.Linear).WaitForCompletion();
         yield return new WaitForSeconds(0.2f);
         _effAppearArmy.SetActive(true);
@@ -39,8 +41,8 @@ public class TakePhotoController : Controller
         yield return new WaitForSeconds(0.5f);
         _captureGo.SetActive(true);
         _captureAnim.Play();
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => FingerDownThisFrame());
+        yield return new WaitForSeconds(2);
+        //yield return new WaitUntil(() => FingerDownThisFrame());
         _splash.gameObject.SetActive(true);
         if (User.Sound)
             AudioManager.Instance.PlaySfx("camera shutter");
@@ -58,16 +60,18 @@ public class TakePhotoController : Controller
             if (i > 0)
                 _albumElement[i - 1].gameObject.SetActive(false);
             if (i == _albumElement.Length - 1)
+            {
                 _happyBirthday.DOFade(1, 0.5f);
-            yield return new WaitForSeconds(1);
+                _confetti.SetActive(true);
+            }
+
+            yield return new WaitForSeconds(0.5f);
             yield return new WaitUntil(() => FingerDownThisFrame());
         }
 
         yield return _canvasAlbum.DOFade(0, 0.5f).WaitForCompletion();
         yield return new WaitForSeconds(1);
         _endGame.SetActive(true);
-        if (User.Sound)
-            AudioManager.Instance.PlaySfx("Outro", 1, false, true);
     }
 
     private bool FingerDownThisFrame()
