@@ -16,7 +16,7 @@ MonoBehaviour:
     _serializedList:
     - Key: 17
       Value:
-      - name: AnhDM
+      - name: Bat ngo chua?
         id: 1
         sprite: {fileID: 21300000, guid: f62df6cd563313f448353a1b787d027e, type: 3}
     - Key: 6
@@ -26,19 +26,19 @@ MonoBehaviour:
         sprite: {fileID: 21300000, guid: c4144ef9b77a5f34c90a4d53812b33ba, type: 3}
     - Key: 12
       Value:
-      - name: AnhBQT
+      - name: B.Q.TAnh
         id: 3
         sprite: {fileID: 21300000, guid: a68453ba33cf6f248960898913034624, type: 3}
-      - name: KimPV
+      - name: Kim Kim
         id: 4
         sprite: {fileID: 21300000, guid: b0dcf53b0955d2f4eac3dc65b7ba50c1, type: 3}
-      - name: HiepND
+      - name: Trap Boy
         id: 5
         sprite: {fileID: 21300000, guid: 38b2ce9f7ae93ca4187b18afc6cea510, type: 3}
-      - name: HiepND
+      - name: Trap Boy
         id: 6
         sprite: {fileID: 21300000, guid: 38b2ce9f7ae93ca4187b18afc6cea510, type: 3}
-      - name: VinhNT
+      - name: N.Vinh
         id: 1
         sprite: {fileID: 21300000, guid: 7a22058c5ae3075488e9f808600658a6, type: 3}
     - Key: 16
@@ -58,34 +58,34 @@ MonoBehaviour:
         sprite: {fileID: 21300000, guid: 9e7e9ae8ac3552f4484eaa1e70b20081, type: 3}
     - Key: 10
       Value:
-      - name: LinhNTM
+      - name: Linh Xinh
         id: 10
         sprite: {fileID: 21300000, guid: 59a4bf61270d2c141903bee903fe6675, type: 3}
-      - name: TuanNA
+      - name: N.Tuan
         id: 11
         sprite: {fileID: 21300000, guid: 669168fe82cf072438d6ba52ebad527c, type: 3}
-      - name: ChuongBV
+      - name: B.Chuong
         id: 12
         sprite: {fileID: 21300000, guid: 150cbd2408737a441aa34f02caf5ed71, type: 3}
-      - name: AnhTM
+      - name: Anh Anh
         id: 13
         sprite: {fileID: 21300000, guid: 43525aaab02182d4daeb404c024e7635, type: 3}
-      - name: VietLD
+      - name: L.Viet
         id: 14
         sprite: {fileID: 21300000, guid: 9a03c472e8e76d849bced0b11dc6a288, type: 3}
-      - name: ThoaiNV
+      - name: N.Thoai
         id: 15
         sprite: {fileID: 21300000, guid: f1c5c6ecd4d57a041b229503c959851b, type: 3}
-      - name: HieuBV
+      - name: B.Hieu
         id: 16
         sprite: {fileID: 21300000, guid: 8480215fc25cde24c8ef4b741f039a17, type: 3}
-      - name: HuongNTT
+      - name: Huong Meo
         id: 17
         sprite: {fileID: 21300000, guid: 207b615fd7f576f4294a45e917561be8, type: 3}
-      - name: QuyNV
+      - name: QuyFA
         id: 18
         sprite: {fileID: 21300000, guid: ba3901741127cee48a98c57a565989ae, type: 3}
-      - name: QuyNV
+      - name: QuyFA
         id: 19
         sprite: {fileID: 21300000, guid: ba3901741127cee48a98c57a565989ae, type: 3}
     - Key: 9
@@ -95,39 +95,39 @@ MonoBehaviour:
         sprite: {fileID: 21300000, guid: 884697de872d98d45a813118daa2dc6a, type: 3}
     - Key: 8
       Value:
-      - name: LanNP
+      - name: Lan Cute
         id: 21
         sprite: {fileID: 21300000, guid: ce5135283037b0143964fc539b389184, type: 3}
-      - name: ThuongBT
+      - name: Thuong Xinh
         id: 22
         sprite: {fileID: 21300000, guid: d488aec694aa4dc43a2f4204791dc42a, type: 3}
-      - name: HungBT
+      - name: B.Hung
         id: 23
         sprite: {fileID: 21300000, guid: b7bc938394ba2194aa46e6bb112d6bb9, type: 3}
-      - name: TuanNA
+      - name: N.Tuan
         id: 24
         sprite: {fileID: 21300000, guid: 669168fe82cf072438d6ba52ebad527c, type: 3}
-      - name: AnhTM
+      - name: T.Anh
         id: 25
         sprite: {fileID: 21300000, guid: 43525aaab02182d4daeb404c024e7635, type: 3}
-      - name: AnNM
+      - name: An Dancer
         id: 26
         sprite: {fileID: 21300000, guid: abba55045e74ec1418c40f689bfa2282, type: 3}
-      - name: ChuongBV
+      - name: B.Chuong
         id: 27
         sprite: {fileID: 21300000, guid: 150cbd2408737a441aa34f02caf5ed71, type: 3}
-      - name: HieuNT
+      - name: Hieu Rapper
         id: 28
         sprite: {fileID: 21300000, guid: 0d1988fb0939c61468d9e2763cabdb24, type: 3}
-      - name: TanPG
+      - name: P.Tan
         id: 29
         sprite: {fileID: 21300000, guid: ad3f2bdcb36b62a4e9861d9085f09eb7, type: 3}
     - Key: 7
       Value:
-      - name: KhanhTQ
+      - name: Khanh Video
         id: 30
         sprite: {fileID: 21300000, guid: c671b019d10aeeb42bd06da2e4dc9b5e, type: 3}
-      - name: ThoPA
+      - name: Tho Xinh
         id: 31
         sprite: {fileID: 21300000, guid: d1b8fc84d3daf1b4eb99d0ecce64a5a1, type: 3}
     - Key: 30
@@ -159,65 +159,65 @@ MonoBehaviour:
         sprite: {fileID: 21300000, guid: 40b13854c91e1204fa0becae4720abb3, type: 3}
     - Key: 1
       Value:
-      - name: NhiemVH
+      - name: Nhiem Vu
         id: 37
         sprite: {fileID: 21300000, guid: eba78320857c61e41a39149913035354, type: 3}
-      - name: NamDP
+      - name: D.Nam
         id: 38
         sprite: {fileID: 21300000, guid: cb2515cbc9edbd94fa302f79037e1f07, type: 3}
-      - name: TriPM
+      - name: P.Tri
         id: 39
         sprite: {fileID: 21300000, guid: 03d9e8dc1df8a0b4c9cdc9ffc154aa51, type: 3}
-      - name: HungVV
+      - name: V.Hung
         id: 40
         sprite: {fileID: 21300000, guid: 213eb0c5c0fe9ae438019b72aaeef111, type: 3}
-      - name: HienDX
+      - name: D.Hien
         id: 41
         sprite: {fileID: 21300000, guid: 5c029af8d14888e40a96a90767f6a998, type: 3}
-      - name: DucLH
+      - name: L.Duc
         id: 42
         sprite: {fileID: 21300000, guid: ef40a28820986cb4ea2d751ec363591e, type: 3}
-      - name: HungBT
+      - name: B.Hung
         id: 43
         sprite: {fileID: 21300000, guid: b7bc938394ba2194aa46e6bb112d6bb9, type: 3}
-      - name: LanNP
+      - name: Lan Cute
         id: 44
         sprite: {fileID: 21300000, guid: ce5135283037b0143964fc539b389184, type: 3}
-      - name: TrangNTT
+      - name: Trang Xinh
         id: 45
         sprite: {fileID: 21300000, guid: d4821f145d2dfdc48abc8b6e56cc4dd3, type: 3}
-      - name: HuyenNTK
+      - name: Nha Thiet Ke
         id: 46
         sprite: {fileID: 21300000, guid: e42c5f8af0aedc249a408edd33ec4c62, type: 3}
     - Key: 2
       Value:
-      - name: HuyenVT
+      - name: Huyen Vu
         id: 47
         sprite: {fileID: 21300000, guid: 18c6e7320d992904abd15700b4ed88d7, type: 3}
-      - name: VinhNT
+      - name: N.Vinh
         id: 48
         sprite: {fileID: 21300000, guid: 7a22058c5ae3075488e9f808600658a6, type: 3}
-      - name: ThoPA
+      - name: Tho Xinh
         id: 49
         sprite: {fileID: 21300000, guid: d1b8fc84d3daf1b4eb99d0ecce64a5a1, type: 3}
-      - name: DuyLX
+      - name: L.Duy
         id: 50
         sprite: {fileID: 21300000, guid: ea884a222936b4d4d99bf282d1edba66, type: 3}
     - Key: 3
       Value:
-      - name: CongCong
+      - name: Cong Cong
         id: 51
         sprite: {fileID: 21300000, guid: 8cf66b759f7d1184a82b672e79922326, type: 3}
-      - name: TrangTT
+      - name: Trang Xinh
         id: 52
         sprite: {fileID: 21300000, guid: 63e9716f9eae8ed4aa4972f72c28551b, type: 3}
-      - name: DungHP
+      - name: Dung Xinh
         id: 53
         sprite: {fileID: 21300000, guid: 65606da9197e8b644bd5bf88f5d52607, type: 3}
-      - name: NhaNTT
+      - name: Nha Xinh
         id: 54
         sprite: {fileID: 21300000, guid: 10942b89e49ad77469dd29df3dd13f69, type: 3}
-      - name: TuyetNT
+      - name: Tuyet Xinh
         id: 55
         sprite: {fileID: 21300000, guid: 78347ca5518debb4fb49a34f4191d1d6, type: 3}
       - name: DungMaMa
@@ -228,51 +228,51 @@ MonoBehaviour:
         sprite: {fileID: 21300000, guid: 8cf66b759f7d1184a82b672e79922326, type: 3}
     - Key: 4
       Value:
-      - name: HiepND
+      - name: Trap boy
         id: 58
         sprite: {fileID: 21300000, guid: 38b2ce9f7ae93ca4187b18afc6cea510, type: 3}
-      - name: QuynhLT
+      - name: Quynh cool
         id: 59
         sprite: {fileID: 21300000, guid: 3f36657d6d60ddb4986a51be8e00f7c7, type: 3}
-      - name: DuyTA
+      - name: T.Duy
         id: 60
         sprite: {fileID: 21300000, guid: 034bf6f980593df46a43b95ca6fb0a69, type: 3}
-      - name: TrongNLD
+      - name: N.Trong
         id: 61
         sprite: {fileID: 21300000, guid: fd84a825d390ee14285d53802df4d4ae, type: 3}
     - Key: 5
       Value:
-      - name: PAM
+      - name: PAM Lao
         id: 62
         sprite: {fileID: 21300000, guid: d5af26a7caf6fd24b9235ca21d012f94, type: 3}
-      - name: HuongNTT
+      - name: Huong Meo
         id: 63
         sprite: {fileID: 21300000, guid: 207b615fd7f576f4294a45e917561be8, type: 3}
-      - name: NhungTTH
+      - name: Cong Chua
         id: 64
         sprite: {fileID: 21300000, guid: 448418a6c68c4644cb01e3e123304417, type: 3}
-      - name: QuynhCT
+      - name: Quynh Cute
         id: 65
         sprite: {fileID: 21300000, guid: 6d401da65365f9d46bf075bf1074a830, type: 3}
-      - name: QuyNV
+      - name: QuyFA
         id: 66
         sprite: {fileID: 21300000, guid: ba3901741127cee48a98c57a565989ae, type: 3}
-      - name: SangVD
+      - name: V.Sang
         id: 67
         sprite: {fileID: 21300000, guid: 27a5c307388565a488defcf7cd738e9b, type: 3}
-      - name: TrungNC
+      - name: Trung baby
         id: 68
         sprite: {fileID: 21300000, guid: 9e5ad836e16d13346ab686c6a62d4491, type: 3}
-      - name: DuongNM
+      - name: N.Duong
         id: 69
         sprite: {fileID: 21300000, guid: f3e375f03d4cf984b8cacb77c2cfe734, type: 3}
-      - name: HuyLG
+      - name: Huy 3D
         id: 70
         sprite: {fileID: 21300000, guid: 82d4ca12bed1a26438e846f11baa8287, type: 3}
       - name: QuyFA
         id: 71
         sprite: {fileID: 21300000, guid: ba3901741127cee48a98c57a565989ae, type: 3}
-      - name: VinhBV
+      - name: Tieu Vinh
         id: 72
         sprite: {fileID: 21300000, guid: ef5e53e4902e14a4ebe68843f2556ef0, type: 3}
     - Key: 100
